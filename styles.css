@@ -859,31 +859,51 @@ footer {
 
 /* Newsletter Styles */
 .newsletter-container {
+    background: var(--light-text);
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-container h2 {
+    color: var(--dark-bg);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-container p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.newsletter-group {
+    display: flex;
+    gap: 1rem;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.newsletter-group {
-    flex-direction: row;
-    gap: 1rem;
-}
-
 .newsletter-group input {
     flex: 1;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 .newsletter-group button {
     padding: 1rem 2rem;
     background: var(--primary-color);
-    color: var(--light-text);
+    color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .newsletter-group button:hover {

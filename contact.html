@@ -59,9 +59,11 @@
             <h2>Stay Updated</h2>
             <div class="underline"></div>
             <p>Subscribe to our newsletter for the latest blockchain news and updates.</p>
-            <form class="modern-form">
+            <form class="modern-form" action="https://formspree.io/f/xldeklne" method="POST">
                 <div class="form-group newsletter-group">
-                    <input type="email" placeholder="Enter your email address" required>
+                    <input type="email" name="_replyto" placeholder="Enter your email address" required>
+                    <input type="hidden" name="_subject" value="Newsletter Subscription">
+                    <input type="hidden" name="form-type" value="newsletter">
                     <button type="submit">
                         <i class="fas fa-envelope"></i>
                         Subscribe
