@@ -2093,306 +2093,129 @@ footer {
     color: #000000;
 }
 
-/* Mobile Styles - Only applies to screens smaller than 768px */
-@media screen and (max-width: 768px) {
-    /* Mobile Navigation */
-    .nav-container {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .nav-links {
-        display: none; /* Hidden by default on mobile */
-        width: 100%;
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem;
-    }
-
-    /* Mobile Menu Button */
-    .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1.5rem;
-        font-size: 1.5rem;
-        color: var(--light-text);
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    /* Price Ticker */
-    .ticker-container {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .crypto-card {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-
-    /* Hero Section */
-    .hero-content {
-        padding: 2rem 1rem;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-
-    /* Feature Preview */
-    .preview-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .preview-card {
-        margin: 0.5rem 0;
-    }
-
-    /* Stats Row */
-    .stats-row {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .stat-item {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-
-    /* Social Grid */
-    .social-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .social-card {
-        margin: 0.5rem 0;
-    }
-
-    /* Contact Form */
-    .contact-form-container {
-        padding: 1rem;
-    }
-
-    .modern-form {
-        width: 100%;
-    }
-
-    /* Footer */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
-
-    .footer-section {
-        margin: 1rem 0;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
+/* Price Dashboard Styles */
+.price-dashboard {
+    padding: 2rem;
+    margin-top: 2rem;
+    background: var(--secondary-bg);
+    border-radius: 10px;
 }
 
-/* Hide mobile menu button by default */
-.mobile-menu-btn {
-    display: none;
+.price-dashboard h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    /* Show mobile menu button */
-    .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        font-size: 1.2rem;
-        color: var(--light-text);
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    /* Navigation */
-    .nav-container {
-        padding: 0.5rem;
-    }
-
-    .logo a {
-        font-size: 1.2rem;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
-
-    /* Mobile Menu Button */
-    .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        font-size: 1.2rem;
-        color: var(--light-text);
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    /* Hero Section */
-    .hero-content {
-        padding: 1.5rem 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-
-    .hero-content h2 {
-        font-size: 1.2rem;
-        line-height: 1.3;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-
-    /* Price Ticker */
-    .crypto-card {
-        padding: 0.8rem;
-    }
-
-    .crypto-card i {
-        font-size: 1.2rem;
-    }
-
-    .crypto-info h3 {
-        font-size: 0.9rem;
-    }
-
-    .crypto-card .price {
-        font-size: 1rem;
-    }
-
-    .crypto-card .change {
-        font-size: 0.8rem;
-    }
-
-    /* Feature Preview */
-    .preview-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .preview-card p {
-        font-size: 0.9rem;
-    }
-
-    /* Stats Section */
-    .stat-item h3 {
-        font-size: 1.8rem !important;
-    }
-
-    .stat-item p {
-        font-size: 0.9rem !important;
-    }
-
-    /* Footer */
-    .footer-section h4 {
-        font-size: 1.1rem;
-    }
-
-    .footer-section p, 
-    .footer-section a {
-        font-size: 0.9rem;
-    }
-
-    /* Social Links */
-    .social-links i {
-        font-size: 1.2rem;
-    }
-
-    /* Contact Form */
-    .contact-form-container label {
-        font-size: 0.9rem;
-    }
-
-    .contact-form-container input,
-    .contact-form-container textarea {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
-
-    /* General Text */
-    p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
+.dashboard-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-/* Timeline */
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.price-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.coin-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.coin-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.price-change {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.price-change.positive {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00c853;
+}
+
+.price-change.negative {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff1744;
+}
+
+.price-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail span:first-child {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .timeline::before {
-        left: 2rem;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 4rem !important;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        left: 0;
-    }
-
-    .timeline-item::before {
-        left: 1.9rem !important;
-    }
-}
-
-/* Chart */
-@media (max-width: 768px) {
-    .chart-container {
+    .price-dashboard {
         padding: 1rem;
     }
 
-    .tradingview-widget-container {
-        height: 400px;
+    .price-grid {
+        grid-template-columns: 1fr;
     }
 
-    .market-overview {
-        grid-template-columns: 1fr;
+    .dashboard-filters {
+        flex-wrap: wrap;
     }
 }
