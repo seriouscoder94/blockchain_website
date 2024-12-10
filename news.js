@@ -1,5 +1,5 @@
 // News API Configuration
-const NEWS_API_KEY = 'your-api-key'; // You'll need to get an API key from CryptoCompare
+const NEWS_API_KEY = 'c333855c293224de4b44b3dc5d37a945d161603986be391689ffb533afccf865'; 
 const NEWS_API_URL = 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN';
 
 let currentPage = 1;
@@ -31,7 +31,23 @@ function filterNewsByCategory(category) {
     
     return allNews.filter(news => {
         const categories = news.categories.toLowerCase();
-        return categories.includes(category.toLowerCase());
+        const tags = (news.tags || '').toLowerCase();
+        
+        // Check both categories and tags for matches
+        switch(category.toLowerCase()) {
+            case 'defi':
+                return categories.includes('defi') || 
+                       categories.includes('decentralized finance') ||
+                       tags.includes('defi') ||
+                       tags.includes('decentralized finance');
+            case 'nfts':
+                return categories.includes('nft') ||
+                       categories.includes('nfts') ||
+                       tags.includes('nft') ||
+                       tags.includes('nfts');
+            default:
+                return categories.includes(category.toLowerCase());
+        }
     });
 }
 
