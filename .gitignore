@@ -1,0 +1,17 @@
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Node modules if you add any JavaScript dependencies later
+node_modules/
