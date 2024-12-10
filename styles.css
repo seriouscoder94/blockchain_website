@@ -2224,4 +2224,39 @@ footer {
     .dashboard-filters {
         flex-wrap: wrap;
     }
+
+    /* Fix for mobile text overflow */
+    .price-card {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        font-size: 0.9rem;
+    }
+
+    .current-price {
+        font-size: 1.2rem;
+    }
+
+    .price-details {
+        font-size: 0.85rem;
+    }
+
+    .detail {
+        min-width: 0;
+    }
+
+    .detail span {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .coin-header h3 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .price-change {
+        font-size: 0.85rem;
+        padding: 0.15rem 0.5rem;
+    }
 }
