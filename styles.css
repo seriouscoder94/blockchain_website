@@ -2260,3 +2260,121 @@ footer {
         padding: 0.15rem 0.5rem;
     }
 }
+
+/* Support Section Styles */
+.support-section {
+    padding: 2rem;
+    background: #f8f9fa;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.crypto-payments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.crypto-payments button {
+    padding: 0.8rem 1.5rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    flex: 0 1 auto;
+    min-width: 150px;
+}
+
+.crypto-payments button:hover {
+    background: #45a049;
+}
+
+#qr-code {
+    margin-top: 1rem;
+}
+
+.crypto-payments .address-text {
+    word-break: break-all;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #f1f1f1;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.wallet-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+#copy-address {
+    background: #2196F3;
+    margin-top: 0.5rem;
+}
+
+#copy-address:hover {
+    background: #1976D2;
+}
+
+/* Ad Slot Styles */
+.ad-slot {
+    display: none;
+}
+
+/* Responsive ad slots */
+@media (max-width: 768px) {
+    .ad-slot[data-ad-type="sidebar"] {
+        float: none;
+        margin: 2rem auto;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Cryptocurrency-specific button styles */
+.eth-button {
+    background: #627EEA !important;
+}
+
+.eth-button:hover {
+    background: #4C63BB !important;
+}
+
+.btc-button {
+    background: #F7931A !important;
+}
+
+.btc-button:hover {
+    background: #C57614 !important;
+}
+
+.usdc-button {
+    background: #2775CA !important;
+}
+
+.usdc-button:hover {
+    background: #1F5C9F !important;
+}
+
+#copy-address {
+    background: #2196F3 !important;
+    margin-top: 0.5rem;
+    width: auto !important;
+}
+
+#copy-address:hover {
+    background: #1976D2 !important;
+}
+
+/* Icon spacing */
+.crypto-payments button i {
+    margin-right: 8px;
+}

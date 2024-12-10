@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockchain: Reshaping Our Future</title>
+    <meta name="google-adsense-account" content="pub-9345743366640756">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-9345743366640756" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@coinbase/wallet-sdk@3/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="js/crypto-payments.js"></script>
+    <script src="js/ad-manager.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -121,6 +129,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Support Section -->
+    <div class="support-section">
+        <h3>Support BlockchainFriendly</h3>
+        <div class="crypto-payments">
+            <button onclick="handleDonation('0.01', 'ETH')" class="eth-button">
+                <i class="fab fa-ethereum"></i> Send ETH
+            </button>
+            <button onclick="handleDonation('0.001', 'BTC')" class="btc-button">
+                <i class="fab fa-bitcoin"></i> Send BTC
+            </button>
+            <button onclick="handleDonation('10', 'USDC')" class="usdc-button">
+                <i class="fas fa-dollar-sign"></i> Send USDC
+            </button>
+            <div id="qr-code"></div>
+            <button id="copy-address" style="display: none">
+                <i class="fas fa-copy"></i> Copy Address
+            </button>
+            <p class="wallet-note">Using Coinbase Wallet</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
