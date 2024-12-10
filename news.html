@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto News - Blockchain Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo">
+            <a href="index.html">BLOCKCHAIN FRIENDLY</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="basics.html">Basics</a>
+            <a href="cryptocurrency.html">Cryptocurrency</a>
+            <a href="impact.html">Impact</a>
+            <a href="future.html">Future</a>
+            <a href="news.html" class="active">News</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>Latest Blockchain & Crypto News</h1>
+            <div class="underline"></div>
+            <p>Stay informed with the latest updates from the blockchain and cryptocurrency world.</p>
+        </section>
+
+        <!-- News Categories -->
+        <div class="news-categories">
+            <button class="category-btn active" data-category="all">All News</button>
+            <button class="category-btn" data-category="blockchain">Blockchain</button>
+            <button class="category-btn" data-category="crypto">Cryptocurrency</button>
+            <button class="category-btn" data-category="defi">DeFi</button>
+            <button class="category-btn" data-category="nft">NFTs</button>
+        </div>
+
+        <!-- News Grid -->
+        <section class="news-grid" id="newsGrid">
+            <!-- News cards will be dynamically inserted here -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading latest news...</p>
+            </div>
+        </section>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+            <button id="loadMoreBtn" class="load-more-btn">
+                <i class="fas fa-sync-alt"></i>
+                Load More News
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Dedicated to making blockchain technology understandable for everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="basics.html">Basics</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="future.html">Future</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://twitter.com/Blockchainwebsi" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/blockchain-friendly-3b3239341/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://discord.gg/G4qSJJ7J" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BlockchainFriendly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="news.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
