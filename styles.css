@@ -10,17 +10,43 @@
     --background: #f8f9fa;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: var(--dark-bg);
+}
+
+/* Page-specific backgrounds */
+.basics-page,
+.cryptocurrency-page,
+.future-page {
+    background: #ffffff;
+}
+
+.home-page,
+.impact-page,
+.news-page,
+.community-page,
+.contact-page {
+    background: var(--dark-bg);
+}
+
+/* Content section backgrounds */
+.basics-page .content-section,
+.cryptocurrency-page .content-section,
+.future-page .content-section {
+    background: #ffffff;
+    color: #222;
+}
+
+.home-page .content-section,
+.impact-page .content-section,
+.news-page .content-section,
+.community-page .content-section,
+.contact-page .content-section {
+    background: var(--dark-bg);
+    color: var(--light-text);
 }
 
 /* Navigation Styles */
@@ -146,7 +172,6 @@ body {
 
 .crypto-card .change {
     font-size: 0.9rem;
-    font-weight: 500;
 }
 
 .crypto-card .change.positive {
@@ -181,6 +206,7 @@ body {
         padding: 0.5rem;
     }
 
+    /* Price Ticker */
     .ticker-container {
         flex-direction: column;
         padding: 1rem;
@@ -189,6 +215,33 @@ body {
     .crypto-card {
         width: 100%;
         margin: 0.5rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1639322537228-f710d846310a') center/cover;
+        color: var(--light-text);
+        overflow: hidden;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
     }
 }
 
@@ -204,21 +257,6 @@ body {
                 url('https://images.unsplash.com/photo-1639322537228-f710d846310a') center/cover;
     color: var(--light-text);
     overflow: hidden;
-}
-
-.blockchain-animation {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.blocks-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 .hero-content {
@@ -326,120 +364,97 @@ body {
 
 /* Content Section Styles */
 .content-section {
-    padding: 4rem 0;
-    background: var(--background);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5rem 2rem;
+    background: transparent;
 }
 
 .content-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
 }
 
+/* Section Title Styling */
 .section-title {
     text-align: center;
-    margin-bottom: 4rem;
-    border-bottom: 2px solid var(--text-color);
-    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
 }
 
 .section-title h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .section-title p {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    font-style: italic;
-}
-
-.explanation-box {
-    background: var(--dark-bg);
-    padding: 2rem 0;
-    margin: 2rem 0;
-    border-bottom: 1px solid #e2e2e2;
-}
-
-.explanation-box h3 {
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.3;
-}
-
-.explanation-box ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.explanation-box li {
-    margin: 1.5rem 0;
     font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    color: #b0b0b0;
 }
 
-.example-box, .benefits-box, .use-cases {
-    background: #f9f9f9;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-left: 3px solid var(--text-color);
-}
-
-.example-box h4, .benefits-box h4, .use-cases h4 {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.example-box p, .benefits-box p, .use-cases p {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.steps-box {
+/* Value Cards Styling */
+.value-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
 
-.step {
-    background: var(--dark-bg);
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     padding: 2rem;
-    border-top: 1px solid #e2e2e2;
-    border-bottom: 1px solid #e2e2e2;
-}
-
-.step h4 {
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
     display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.step p {
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
     color: var(--text-color);
-    line-height: 1.8;
-    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.value-card .dark-text {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Basics Page Specific */
+.basics-page .content-section {
+    background: transparent;
+}
+
+.basics-page .value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.basics-page .value-card:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.basics-page .value-card .dark-text {
+    color: #b0b0b0;
 }
 
 /* List Styles */
@@ -492,7 +507,7 @@ body {
 .market-overview {
     padding: 4rem 2rem;
     background: linear-gradient(135deg, var(--background) 0%, var(--background) 100%);
-    color: var(--light-text);
+    color: var(--text-color);
 }
 
 .market-overview h2 {
@@ -584,7 +599,7 @@ body {
 .quick-stats {
     padding: 4rem 2rem;
     background: linear-gradient(45deg, var(--background) 0%, var(--background) 100%);
-    color: var(--light-text);
+    color: var(--text-color);
 }
 
 .stats-container {
@@ -610,50 +625,117 @@ footer {
 }
 
 .footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    padding: 2rem;
+}
+
+.stats-container {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: left;
+}
+
+.stat h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.stat p {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: var(--light-text);
+}
+
+.footer-section {
+    grid-column: span 1;
 }
 
 .footer-section h4 {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    color: var(--light-text);
 }
 
 .footer-section ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-section ul li {
     margin-bottom: 0.5rem;
 }
 
-.footer-section a {
+.footer-section ul li a {
     color: var(--light-text);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
+.footer-section ul li a:hover {
     color: var(--primary-color);
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
 .social-links a {
+    color: var(--light-text);
     font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .stats-container {
+        gap: 1rem;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }
 
 /* Contact Form Styles */
@@ -2475,7 +2557,8 @@ footer {
 
     .support-section, .social-share {
         width: 100%;
-        max-width: 600px;
+        min-height: auto;
+        padding: 30px 20px;
     }
 }
 
@@ -2635,13 +2718,13 @@ footer {
 }
 
 .community-rules ul {
-    list-style-type: none;
-    padding: 0;
+    padding-left: 24px;
+    margin: 0;
 }
 
 .community-rules li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    margin: 8px 0;
+    font-size: 14px;
     color: #666;
 }
 
@@ -3267,121 +3350,6 @@ footer {
         padding: 0 1rem;
     }
 
-    /* Basics page specific */
-    .basics-page .hero-section {
-        padding: 2rem 1rem;
-    }
-
-    .basics-page .content-section {
-        padding: 2rem 1rem;
-    }
-
-    .basics-page .explanation-box {
-        padding: 1.5rem;
-        margin: 1rem 0;
-    }
-
-    .basics-page .explanation-box h3 {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    .basics-page .explanation-box p,
-    .basics-page .explanation-box li {
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    /* Grid adjustments */
-    .feature-grid,
-    .crypto-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    /* Card adjustments */
-    .card {
-        margin: 0.5rem 0;
-        padding: 1rem;
-    }
-
-    /* Image adjustments */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Button adjustments */
-    .cta-button {
-        width: 100%;
-        max-width: 300px;
-        margin: 1rem auto;
-    }
-
-    /* Footer adjustments */
-    .footer-section {
-        padding: 2rem 1rem;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        margin-top: 1rem;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.3rem;
-    }
-
-    .section-title h2 {
-        font-size: 1.5rem;
-    }
-
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 0.4rem;
-    }
-}
-
-/* Mobile Styles - Text Alignment Fixes */
-@media (max-width: 768px) {
-    /* General text containment */
-    * {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
-
-    /* Content sections */
-    .content-section {
-        padding: 2rem 1rem;
-        overflow: hidden;
-    }
-
-    .content-container {
-        width: 100%;
-        padding: 0 1rem;
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    /* Text alignment and sizing */
-    h1, h2, h3, h4, h5, h6, p {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
     /* Hero section mobile adjustments */
     .hero-content {
         padding: 2rem 1rem;
@@ -3880,10 +3848,10 @@ footer {
     filter: brightness(1.1);
 }
 
-.twitter { background: #1da1f2; }
-.facebook { background: #1877f2; }
-.linkedin { background: #0077b5; }
-.whatsapp { background: #25d366; }
+.share-button.twitter { background: #1da1f2; }
+.share-button.facebook { background: #1877f2; }
+.share-button.linkedin { background: #0077b5; }
+.share-button.whatsapp { background: #25d366; }
 
 #qr-code {
     background: white;
@@ -3919,5 +3887,604 @@ footer {
         width: 100%;
         min-height: auto;
         padding: 1.5rem;
+    }
+}
+
+/* Value Cards Styling */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.value-card .dark-text {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Section Title Styling */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+/* Content Section Styling */
+.content-section {
+    padding: 5rem 2rem;
+    background: transparent;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Basics Page Specific */
+.basics-page .content-section {
+    background: transparent;
+}
+
+.basics-page .value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.basics-page .value-card:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.basics-page .value-card .dark-text {
+    color: #b0b0b0;
+}
+
+/* Page-specific styles */
+.basics-page, .cryptocurrency-page, .future-page {
+    background: #ffffff;
+}
+
+.basics-page .content-section,
+.cryptocurrency-page .content-section,
+.future-page .content-section {
+    background: #ffffff;
+    color: #222;
+}
+
+.basics-page .section-title,
+.cryptocurrency-page .section-title,
+.future-page .section-title {
+    color: #222;
+}
+
+.basics-page .section-title p,
+.cryptocurrency-page .section-title p,
+.future-page .section-title p {
+    color: #444;
+}
+
+.basics-page .value-card,
+.cryptocurrency-page .value-card,
+.future-page .value-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+}
+
+.basics-page .value-card h3,
+.cryptocurrency-page .value-card h3,
+.future-page .value-card h3 {
+    color: #222;
+    font-family: "georgia", serif;
+    font-weight: 700;
+}
+
+.basics-page .value-card p,
+.cryptocurrency-page .value-card p,
+.future-page .value-card p,
+.basics-page .value-card .dark-text,
+.cryptocurrency-page .value-card .dark-text,
+.future-page .value-card .dark-text {
+    color: #444;
+    font-family: "georgia", serif;
+    line-height: 1.6;
+}
+
+.basics-page .value-card:hover,
+.cryptocurrency-page .value-card:hover,
+.future-page .value-card:hover {
+    border-color: #222;
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Keep original dark theme for other pages */
+.home-page,
+.impact-page,
+.news-page,
+.community-page {
+    background: var(--dark-bg);
+}
+
+.home-page .content-section,
+.impact-page .content-section,
+.news-page .content-section,
+.community-page .content-section {
+    background: var(--dark-bg);
+    color: var(--light-text);
+}
+
+/* Keep original dark theme for news, community, and contact pages */
+.news-page,
+.community-page,
+.contact-page {
+    background: var(--dark-bg);
+}
+
+.news-page .content-section,
+.community-page .content-section,
+.contact-page .content-section {
+    background: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.news-page .section-title,
+.community-page .section-title,
+.contact-page .section-title {
+    color: var(--light-text);
+}
+
+.news-page .section-title p,
+.community-page .section-title p,
+.contact-page .section-title p {
+    color: #b0b0b0;
+}
+
+.news-card,
+.community-card,
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover,
+.community-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.news-title,
+.community-title,
+.contact-title {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.news-meta,
+.community-meta {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+/* Support and Share Links */
+.support-links,
+.share-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.support-links a,
+.share-links a {
+    color: #222;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.support-links a:hover,
+.share-links a:hover {
+    background: #f5f5f5;
+    border-color: #222;
+}
+
+.support-links i,
+.share-links i {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+/* Cryptocurrency Support Links */
+.crypto-support a {
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.crypto-support a:hover {
+    background: #f5f5f5;
+    border-color: #222;
+}
+
+.crypto-support i {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+/* Dark theme components for news, community, and contact pages */
+.news-page .news-card,
+.community-page .community-card,
+.contact-page .contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.news-page .news-card:hover,
+.community-page .community-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.news-page .news-title,
+.community-page .community-title,
+.contact-page .contact-title {
+    color: var(--light-text);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.news-page .news-content,
+.community-page .community-content,
+.contact-page .contact-content {
+    color: var(--light-text);
+}
+
+.news-page p,
+.community-page p,
+.contact-page p {
+    color: #b0b0b0;
+}
+
+/* Contact form dark theme */
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-text);
+    padding: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.contact-form label {
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-form button {
+    background: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: var(--secondary-color);
+}
+
+/* Community elements dark theme */
+.community-stats,
+.community-rules,
+.community-posts {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.community-stats h3,
+.community-rules h3,
+.community-posts h3 {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.community-stats p,
+.community-rules p,
+.community-posts p {
+    color: #b0b0b0;
+}
+
+/* Digital Cash Section Styling */
+.digital-cash-section {
+    background: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.digital-cash-title {
+    font-family: "georgia", serif;
+    color: #222;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.digital-cash-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.digital-cash-feature {
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.digital-cash-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #222;
+}
+
+.digital-cash-feature i {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.digital-cash-feature h3 {
+    font-family: "georgia", serif;
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.digital-cash-feature p {
+    font-family: "georgia", serif;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.digital-cash-example {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+}
+
+.digital-cash-example h4 {
+    font-family: "georgia", serif;
+    color: #222;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.digital-cash-example p {
+    font-family: "georgia", serif;
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* How Crypto Works Section Styling */
+.crypto-works-section {
+    background: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.crypto-works-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.crypto-works-step {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.crypto-works-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #222;
+}
+
+.crypto-works-step .step-number {
+    font-family: "georgia", serif;
+    color: #222;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.crypto-works-step h3 {
+    font-family: "georgia", serif;
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.crypto-works-step p {
+    font-family: "georgia", serif;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.crypto-works-step ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.crypto-works-step li {
+    font-family: "georgia", serif;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.crypto-works-step li:before {
+    content: "•";
+    color: #222;
+    position: absolute;
+    left: 0;
+}
+
+.crypto-works-step i {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+/* Mobile-specific styles to fix header text wrapping */
+@media (max-width: 768px) {
+    .page-header-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+        word-break: normal;
+        hyphens: none;
+    }
+
+    /* Specific page title adjustments for mobile */
+    .basics-page .page-header-content h1,
+    .cryptocurrency-page .page-header-content h1,
+    .impact-page .page-header-content h1,
+    .future-page .page-header-content h1 {
+        font-size: 1.8rem;
+        white-space: normal;
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Ensure subtitles also look good on mobile */
+    .basics-page .page-header-content p,
+    .cryptocurrency-page .page-header-content p,
+    .impact-page .page-header-content p,
+    .future-page .page-header-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+        max-width: 280px;
+        margin: 1rem auto 0;
+        text-align: center;
     }
 }
