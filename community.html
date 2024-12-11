@@ -57,31 +57,10 @@
         <aside class="community-sidebar">
             <div class="sidebar-section about-community">
                 <h3>About Community</h3>
-                <p>A place to discuss everything blockchain and cryptocurrency related. Join our community of enthusiasts, developers, and investors.</p>
-                <div class="community-stats">
-                    <div class="stat">
-                        <span class="stat-number">15.2k</span>
-                        <span class="stat-label">Members</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">238</span>
-                        <span class="stat-label">Online</span>
-                    </div>
-                </div>
-                <button class="join-button">Join Community</button>
+                <p>A place to discuss everything blockchain and cryptocurrency related. A community of enthusiasts, developers, and investors.</p>
                 <div class="reddit-community">
-                    <h4><i class="fab fa-reddit"></i> Join Our Reddit Community</h4>
-                    <p>Join our active Reddit community for daily discussions, news, and insights!</p>
-                    <div class="reddit-stats">
-                        <div class="stat">
-                            <span class="stat-number" id="reddit-members">0</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="reddit-online">0</span>
-                            <span class="stat-label">Online</span>
-                        </div>
-                    </div>
+                    <h4><i class="fab fa-reddit"></i> Reddit Community</h4>
+                    <p>Check out our active Reddit community for daily discussions, news, and insights!</p>
                     <a href="https://reddit.com/r/BlockchainFriendly" target="_blank" class="reddit-join-btn">
                         Join Community
                     </a>
@@ -128,41 +107,6 @@
                 <div id="reddit-posts" class="posts-container">
                     <!-- Posts will be loaded here -->
                     <div class="loading-spinner">Loading posts...</div>
-                </div>
-            </div>
-
-            <!-- Post Creation Modal -->
-            <div id="post-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <h2>Create a Post</h2>
-                    <form id="post-form">
-                        <div class="post-type-selector">
-                            <button type="button" class="post-type active" data-type="text">
-                                <i class="fas fa-paragraph"></i> Text
-                            </button>
-                            <button type="button" class="post-type" data-type="link">
-                                <i class="fas fa-link"></i> Link
-                            </button>
-                            <button type="button" class="post-type" data-type="image">
-                                <i class="fas fa-image"></i> Image
-                            </button>
-                        </div>
-                        <input type="text" id="post-title" placeholder="Title" required>
-                        <select id="post-flair" required>
-                            <option value="">Select Flair</option>
-                            <option value="discussion">Discussion</option>
-                            <option value="question">Question</option>
-                            <option value="news">News</option>
-                            <option value="analysis">Analysis</option>
-                            <option value="technical">Technical</option>
-                        </select>
-                        <textarea id="post-content" placeholder="What are your thoughts? (Markdown supported)" required></textarea>
-                        <div class="markdown-tips">
-                            <span>Markdown supported: **bold**, *italic*, [link](url), `code`</span>
-                        </div>
-                        <button type="submit" class="submit-post">Post</button>
-                    </form>
                 </div>
             </div>
 

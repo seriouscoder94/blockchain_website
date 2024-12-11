@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Sitemap: https://blockchainfriendly.com/sitemap.xml
+
+# Allow all robots complete access
+Disallow:
+
+# Prevent caching of certain files
+User-agent: *
+Disallow: /js/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow Googlebot specific access
+User-agent: Googlebot
+Allow: /*.json$
+Allow: /*.xml$

@@ -17,120 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeUI() {
     console.log('Initializing UI components');
     
-    const joinButton = document.querySelector('.join-button');
-    if (!joinButton) {
-        console.error('Join button not found!');
-        alert('Join button not found in the page!'); // Debug alert
-    } else {
-        console.log('Join button found:', joinButton);
-    }
-
-    const createPostBtn = document.getElementById('create-post-btn');
-    if (!createPostBtn) {
-        console.error('Create post button not found!');
-        alert('Create post button not found!'); // Debug alert
-    } else {
-        console.log('Create post button found:', createPostBtn);
-    }
-    
     // Initialize posts list
     loadPosts();
     console.log('Posts loaded');
     
-    // Initialize Join Button
-    initializeJoinButton();
-    console.log('Join button initialized');
-    
-    // Initialize Post Creation
-    initializePostCreation();
-    console.log('Post creation initialized');
-    
     // Initialize Sort Selection
     initializeSortSelection();
     console.log('Sort selection initialized');
-}
-
-function initializeJoinButton() {
-    const joinButton = document.querySelector('.join-button');
-    if (joinButton) {
-        // Initialize button state from localStorage
-        const isJoined = localStorage.getItem('communityJoined') === 'true';
-        updateJoinButton(isJoined);
-
-        joinButton.onclick = function() {
-            const currentlyJoined = this.textContent.includes('Leave');
-            const newJoinState = !currentlyJoined;
-            
-            // Update localStorage
-            localStorage.setItem('communityJoined', newJoinState);
-            
-            // Update button appearance
-            updateJoinButton(newJoinState);
-            
-            // Update member count
-            const memberCountElement = document.querySelector('.stat-number');
-            if (memberCountElement) {
-                let currentCount = parseInt(memberCountElement.textContent.replace(/,/g, ''));
-                currentCount = newJoinState ? currentCount + 1 : currentCount - 1;
-                memberCountElement.textContent = currentCount.toLocaleString();
-            }
-        };
-    }
-}
-
-function initializePostCreation() {
-    // Modal elements
-    const modal = document.getElementById('post-modal');
-    const createPostBtn = document.getElementById('create-post-btn');
-    const closeModal = document.querySelector('.close-modal');
-    const postForm = document.getElementById('post-form');
-
-    if (createPostBtn) {
-        createPostBtn.onclick = function() {
-            if (modal) modal.style.display = 'block';
-        };
-    }
-
-    if (closeModal) {
-        closeModal.onclick = function() {
-            if (modal) modal.style.display = 'none';
-        };
-    }
-
-    // Close modal when clicking outside
-    window.onclick = function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
-
-    // Post type selector
-    const postTypes = document.querySelectorAll('.post-type');
-    postTypes.forEach(type => {
-        type.onclick = function() {
-            postTypes.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-        };
-    });
-
-    // Handle form submission
-    if (postForm) {
-        postForm.onsubmit = function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('post-title').value;
-            const content = document.getElementById('post-content').value;
-            const flair = document.getElementById('post-flair').value;
-            
-            if (title && content && flair) {
-                addNewPost(title, content, flair);
-                
-                // Close modal and reset form
-                if (modal) modal.style.display = 'none';
-                this.reset();
-            }
-        };
-    }
 }
 
 function initializeSortSelection() {
@@ -299,17 +192,4 @@ function getTimeAgo(timestamp) {
     }
     
     return 'Just now';
-}
-
-function updateJoinButton(isJoined) {
-    const joinButton = document.querySelector('.join-button');
-    if (!joinButton) return;
-    
-    if (isJoined) {
-        joinButton.textContent = 'Leave Community';
-        joinButton.style.background = '#ff4500';
-    } else {
-        joinButton.textContent = 'Join Community';
-        joinButton.style.background = '#0079d3';
-    }
 }
