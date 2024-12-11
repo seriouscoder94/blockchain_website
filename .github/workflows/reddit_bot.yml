@@ -1,0 +1,38 @@
+name: Reddit Bot Scheduler
+
+on:
+  schedule:
+    - cron: '0 15 * * *'  # 9:00 AM CT (15:00 UTC)
+    - cron: '0 18 * * *'  # 12:00 PM CT (18:00 UTC)
+    - cron: '0 21 * * *'  # 3:00 PM CT (21:00 UTC)
+    - cron: '0 0 * * *'   # 6:00 PM CT (00:00 UTC next day)
+    - cron: '0 3 * * *'   # 9:00 PM CT (03:00 UTC next day)
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  post_news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          cd reddit_bot
+          pip install -r requirements.txt
+          
+      - name: Run bot
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          CRYPTO_API_KEY: ${{ secrets.CRYPTO_API_KEY }}
+        run: |
+          cd reddit_bot
+          python reddit_bot_action.py
