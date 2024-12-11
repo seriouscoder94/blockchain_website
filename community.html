@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockchainFriendly Community</title>
+    <meta name="google-adsense-account" content="pub-9345743366640756">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-9345743366640756" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js"></script>
+    <script defer src="js/community.js"></script>
+    <script defer src="js/reddit-integration.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="logo">
+            <a href="index.html">BLOCKCHAIN FRIENDLY</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="basics.html">Basics</a>
+            <a href="cryptocurrency.html">Cryptocurrency</a>
+            <a href="impact.html">Impact</a>
+            <a href="future.html">Future</a>
+            <a href="news.html">News</a>
+            <a href="community.html" class="active">Community</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Community Header -->
+    <header class="community-header">
+        <div class="header-content">
+            <h1>BlockchainFriendly Community</h1>
+            <div class="header-actions">
+                <button id="create-post-btn" class="primary-button">Create Post</button>
+                <div class="sort-options">
+                    <select id="sort-posts">
+                        <option value="hot">Hot</option>
+                        <option value="new">New</option>
+                        <option value="top">Top</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="reddit-style-container">
+        <!-- Sidebar -->
+        <aside class="community-sidebar">
+            <div class="sidebar-section about-community">
+                <h3>About Community</h3>
+                <p>A place to discuss everything blockchain and cryptocurrency related. Join our community of enthusiasts, developers, and investors.</p>
+                <div class="community-stats">
+                    <div class="stat">
+                        <span class="stat-number">15.2k</span>
+                        <span class="stat-label">Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">238</span>
+                        <span class="stat-label">Online</span>
+                    </div>
+                </div>
+                <button class="join-button">Join Community</button>
+                <div class="reddit-community">
+                    <h4><i class="fab fa-reddit"></i> Join Our Reddit Community</h4>
+                    <p>Join our active Reddit community for daily discussions, news, and insights!</p>
+                    <div class="reddit-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="reddit-members">0</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="reddit-online">0</span>
+                            <span class="stat-label">Online</span>
+                        </div>
+                    </div>
+                    <a href="https://reddit.com/r/BlockchainFriendly" target="_blank" class="reddit-join-btn">
+                        Join Community
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-section community-rules">
+                <h3>Community Rules</h3>
+                <ol>
+                    <li>No spam or self-promotion</li>
+                    <li>Be respectful and helpful</li>
+                    <li>No price manipulation</li>
+                    <li>Source your claims</li>
+                    <li>No personal attacks</li>
+                </ol>
+            </div>
+
+            <div class="sidebar-section trending-topics">
+                <h3>Trending Topics</h3>
+                <div class="topic-tags">
+                    <span class="topic-tag">#Bitcoin</span>
+                    <span class="topic-tag">#DeFi</span>
+                    <span class="topic-tag">#NFTs</span>
+                    <span class="topic-tag">#Web3</span>
+                    <span class="topic-tag">#Mining</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="community-main">
+            <!-- Reddit Posts Feed -->
+            <div class="reddit-feed">
+                <div class="feed-header">
+                    <h2>Latest Community Posts</h2>
+                    <div class="feed-controls">
+                        <select id="post-sort" class="sort-select">
+                            <option value="hot">Hot</option>
+                            <option value="new">New</option>
+                            <option value="top">Top</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="reddit-posts" class="posts-container">
+                    <!-- Posts will be loaded here -->
+                    <div class="loading-spinner">Loading posts...</div>
+                </div>
+            </div>
+
+            <!-- Post Creation Modal -->
+            <div id="post-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Create a Post</h2>
+                    <form id="post-form">
+                        <div class="post-type-selector">
+                            <button type="button" class="post-type active" data-type="text">
+                                <i class="fas fa-paragraph"></i> Text
+                            </button>
+                            <button type="button" class="post-type" data-type="link">
+                                <i class="fas fa-link"></i> Link
+                            </button>
+                            <button type="button" class="post-type" data-type="image">
+                                <i class="fas fa-image"></i> Image
+                            </button>
+                        </div>
+                        <input type="text" id="post-title" placeholder="Title" required>
+                        <select id="post-flair" required>
+                            <option value="">Select Flair</option>
+                            <option value="discussion">Discussion</option>
+                            <option value="question">Question</option>
+                            <option value="news">News</option>
+                            <option value="analysis">Analysis</option>
+                            <option value="technical">Technical</option>
+                        </select>
+                        <textarea id="post-content" placeholder="What are your thoughts? (Markdown supported)" required></textarea>
+                        <div class="markdown-tips">
+                            <span>Markdown supported: **bold**, *italic*, [link](url), `code`</span>
+                        </div>
+                        <button type="submit" class="submit-post">Post</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Posts List -->
+            <div id="posts-list">
+                <!-- Posts will be dynamically loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 BlockchainFriendly. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

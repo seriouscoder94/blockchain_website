@@ -19,62 +19,75 @@ async function initCoinbaseWallet() {
     return false;
 }
 
-// Payment addresses - replace with your Coinbase addresses
+// Payment addresses
 const PAYMENT_ADDRESSES = {
-    'ETH': '0xf3cB0eF05a345f3397fE9CDCDd5Ec1d125550E1e', // Replace everything after 'ETH': with your Ethereum address in quotes
-    'BTC': '3FwU7EcARSFMut2AUBT1dxV4i1n7KA1QzY',   // Replace everything after 'BTC': with your Bitcoin address in quotes
-    'USDC': '0x88B98B7A482D1B83e414bbE772340e936EE9DC86' // Replace everything after 'USDC': with your USDC address in quotes
-}
+    'ETH': '0xf3cB0eF05a345f3397fE9CDCDd5Ec1d125550E1e',
+    'BTC': '3FwU7EcARSFMut2AUBT1dxV4i1n7KA1QzY',
+    'USDC': '0x88B98B7A482D1B83e414bbE772340e936EE9DC86'
+};
 
 // Handle crypto donations
-async function handleDonation(amount, currency) {
-    if (!await initCoinbaseWallet()) {
-        window.open('https://www.coinbase.com/wallet', '_blank');
-        alert('Please install Coinbase Wallet to make crypto payments!');
-        return;
-    }
-
-    try {
-        const accounts = await web3.eth.getAccounts();
-        
-        if (currency === 'ETH') {
-            await web3.eth.sendTransaction({
-                from: accounts[0],
-                to: PAYMENT_ADDRESSES[currency],
-                value: web3.utils.toWei(amount, 'ether')
-            });
-        } else {
-            // For other currencies, show QR code and address
-            showQRCode(currency);
-            showCopyAddress(currency);
-        }
-        
-    } catch (error) {
-        alert('Transaction failed: ' + error.message);
-    }
+function handleDonation(amount, currency) {
+    // Show QR code and copy button immediately
+    showQRCode(currency);
+    showCopyAddress(currency);
+    
+    // Show mobile wallet options
+    showMobileWalletOptions(currency, amount);
 }
 
 // Display QR code for crypto address
 function showQRCode(currency) {
-    const address = PAYMENT_ADDRESSES[currency];
     const qrContainer = document.getElementById('qr-code');
     qrContainer.innerHTML = '';
-    new QRCode(qrContainer, address);
+    qrContainer.style.display = 'block';
     
-    // Show the address text
-    const addressText = document.createElement('div');
-    addressText.className = 'address-text';
-    addressText.textContent = address;
-    qrContainer.appendChild(addressText);
+    QRCode.toCanvas(qrContainer, PAYMENT_ADDRESSES[currency], function (error) {
+        if (error) console.error(error);
+    });
 }
 
 // Show copy address button
 function showCopyAddress(currency) {
-    const address = PAYMENT_ADDRESSES[currency];
     const copyBtn = document.getElementById('copy-address');
     copyBtn.style.display = 'block';
-    copyBtn.onclick = () => {
-        navigator.clipboard.writeText(address);
+    copyBtn.onclick = function() {
+        navigator.clipboard.writeText(PAYMENT_ADDRESSES[currency]);
         alert('Address copied to clipboard!');
     };
+}
+
+// Show mobile wallet options
+function showMobileWalletOptions(currency, amount) {
+    const walletLinks = document.getElementById('wallet-links');
+    if (!walletLinks) return;
+
+    // Clear previous links
+    walletLinks.innerHTML = '';
+
+    // Add links for different wallets
+    const links = {
+        'ETH': [
+            {name: 'MetaMask', url: `ethereum:${PAYMENT_ADDRESSES[currency]}?value=${amount}`},
+            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=ETH&amount=${amount}`},
+            {name: 'Trust Wallet', url: `trust://send?address=${PAYMENT_ADDRESSES[currency]}&asset=ETH&amount=${amount}`}
+        ],
+        'BTC': [
+            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=BTC&amount=${amount}`},
+            {name: 'Trust Wallet', url: `trust://send?address=${PAYMENT_ADDRESSES[currency]}&asset=BTC&amount=${amount}`}
+        ],
+        'USDC': [
+            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=USDC&amount=${amount}`},
+            {name: 'MetaMask', url: `ethereum:${PAYMENT_ADDRESSES[currency]}?value=${amount}`}
+        ]
+    };
+
+    links[currency].forEach(link => {
+        const button = document.createElement('a');
+        button.href = link.url;
+        button.className = 'wallet-link';
+        button.target = '_blank';
+        button.textContent = `Open in ${link.name}`;
+        walletLinks.appendChild(button);
+    });
 }
