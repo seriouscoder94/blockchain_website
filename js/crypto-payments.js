@@ -65,20 +65,48 @@ function showMobileWalletOptions(currency, amount) {
     // Clear previous links
     walletLinks.innerHTML = '';
 
+    // Convert amount to Wei for ETH transactions (1 ETH = 10^18 Wei)
+    const weiAmount = currency === 'ETH' ? (amount * 1e18).toString(16) : amount;
+    
     // Add links for different wallets
     const links = {
         'ETH': [
-            {name: 'MetaMask', url: `ethereum:${PAYMENT_ADDRESSES[currency]}?value=${amount}`},
-            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=ETH&amount=${amount}`},
-            {name: 'Trust Wallet', url: `trust://send?address=${PAYMENT_ADDRESSES[currency]}&asset=ETH&amount=${amount}`}
+            {
+                name: 'MetaMask',
+                url: `https://metamask.app.link/send/${PAYMENT_ADDRESSES[currency]}@1/transfer?value=${weiAmount}`
+            },
+            {
+                name: 'Coinbase',
+                url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=ETH&amount=${amount}`
+            },
+            {
+                name: 'Trust Wallet',
+                url: `https://link.trustwallet.com/send?coin=60&address=${PAYMENT_ADDRESSES[currency]}&amount=${amount}`
+            }
         ],
         'BTC': [
-            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=BTC&amount=${amount}`},
-            {name: 'Trust Wallet', url: `trust://send?address=${PAYMENT_ADDRESSES[currency]}&asset=BTC&amount=${amount}`}
+            {
+                name: 'Coinbase',
+                url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=BTC&amount=${amount}`
+            },
+            {
+                name: 'Trust Wallet',
+                url: `https://link.trustwallet.com/send?coin=0&address=${PAYMENT_ADDRESSES[currency]}&amount=${amount}`
+            }
         ],
         'USDC': [
-            {name: 'Coinbase', url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=USDC&amount=${amount}`},
-            {name: 'MetaMask', url: `ethereum:${PAYMENT_ADDRESSES[currency]}?value=${amount}`}
+            {
+                name: 'Coinbase',
+                url: `https://wallet.coinbase.com/send?address=${PAYMENT_ADDRESSES[currency]}&asset=USDC&amount=${amount}`
+            },
+            {
+                name: 'MetaMask',
+                url: `https://metamask.app.link/send/${PAYMENT_ADDRESSES[currency]}@1/transfer?value=${amount}`
+            },
+            {
+                name: 'Trust Wallet',
+                url: `https://link.trustwallet.com/send?coin=60&address=${PAYMENT_ADDRESSES[currency]}&amount=${amount}&token_id=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48`
+            }
         ]
     };
 
