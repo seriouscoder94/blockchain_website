@@ -4488,3 +4488,28 @@ footer {
         text-align: center;
     }
 }
+
+/* Community Rules Styles */
+.community-rules {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.community-rules h3 {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.community-rules ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.community-rules li {
+    color: var(--light-text);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
