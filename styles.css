@@ -160,166 +160,36 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-container {
-        padding: 1rem 2rem;
+        position: relative;  /* Remove sticky positioning on mobile */
+        padding: 1rem;
+        flex-direction: column;
+        top: auto;  /* Remove top positioning */
+        z-index: 1;
     }
 
     .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.5rem;
+        margin-top: 1rem;
+        position: relative;  /* Ensure it's not fixed */
     }
 
     .nav-links a {
-        padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
+        padding: 0.5rem;
     }
 
     .ticker-container {
-        gap: 1rem;
-        padding: 0 1rem;
+        flex-direction: column;
+        padding: 1rem;
     }
 
     .crypto-card {
-        width: calc(50% - 0.5rem);
-        min-width: 150px;
-        padding: 0.8rem 1rem;
+        width: 100%;
+        margin: 0.5rem 0;
     }
-}
-
-/* Crypto Ticker */
-.crypto-ticker {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-}
-
-/* Only apply WSJ style to basics page */
-.basics-page {
-    background: #ffffff;
-    font-family: 'Georgia', serif;
-    color: #000;
-}
-
-.basics-page .content-section {
-    padding: 4rem 0;
-    background: #ffffff;
-}
-
-.basics-page .content-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.basics-page .section-title {
-    text-align: center;
-    margin-bottom: 4rem;
-    border-bottom: 2px solid #000;
-    padding-bottom: 2rem;
-}
-
-.basics-page .section-title h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #000;
-    font-weight: 700;
-    font-family: 'Georgia', serif;
-}
-
-.basics-page .section-title p {
-    font-size: 1.4rem;
-    color: #000;
-    font-style: italic;
-}
-
-.basics-page .explanation-box {
-    margin: 3rem 0;
-    padding: 0;
-    background: #ffffff;
-}
-
-.basics-page .explanation-box h3 {
-    font-size: 2.2rem;
-    color: #000;
-    font-weight: 700;
-    font-family: 'Georgia', serif;
-    margin-bottom: 2rem;
-    line-height: 1.3;
-    border-bottom: 1px solid #000;
-    padding-bottom: 1rem;
-}
-
-.basics-page .explanation-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.basics-page .explanation-box li {
-    font-size: 1.2rem;
-    color: #000;
-    line-height: 1.8;
-    margin: 1.5rem 0;
-    padding-left: 2rem;
-    position: relative;
-}
-
-.basics-page .example-box,
-.basics-page .benefits-box,
-.basics-page .use-cases {
-    margin: 3rem 0;
-    padding: 2rem 3rem;
-    background: #ffffff;
-    border-left: 2px solid #000;
-}
-
-.basics-page .example-box h4,
-.basics-page .benefits-box h4,
-.basics-page .use-cases h4 {
-    font-size: 1.8rem;
-    color: #000;
-    font-weight: 700;
-    font-family: 'Georgia', serif;
-    margin-bottom: 1.5rem;
-}
-
-.basics-page .example-box p,
-.basics-page .benefits-box p,
-.basics-page .use-cases p,
-.basics-page .example-box ul li,
-.basics-page .benefits-box ul li,
-.basics-page .use-cases ul li {
-    font-size: 1.2rem;
-    color: #000;
-    line-height: 1.8;
-    margin: 1rem 0;
-}
-
-.basics-page .steps-box {
-    margin: 3rem 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.basics-page .step {
-    padding: 2rem 0;
-    background: #ffffff;
-    border-bottom: 1px solid #000;
-}
-
-.basics-page .step h4 {
-    font-size: 1.6rem;
-    color: #000;
-    font-weight: 700;
-    font-family: 'Georgia', serif;
-    margin-bottom: 1rem;
-}
-
-.basics-page .step p {
-    font-size: 1.2rem;
-    color: #000;
-    line-height: 1.8;
 }
 
 /* Hero Section */
