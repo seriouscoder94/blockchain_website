@@ -5,6 +5,10 @@ import time
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+from colorama import init, Fore, Style
+
+# Initialize colorama for Windows
+init()
 
 # Load environment variables
 load_dotenv()
@@ -21,6 +25,18 @@ reddit = praw.Reddit(
 # Crypto news API credentials
 CRYPTO_API_KEY = os.getenv('CRYPTO_API_KEY')
 CRYPTO_NEWS_URL = "https://cryptopanic.com/api/v1/posts/"
+
+def log_info(message):
+    """Print info message with timestamp"""
+    print(f"{Fore.CYAN}[{datetime.now().strftime('%H:%M:%S')}] INFO: {message}{Style.RESET_ALL}")
+
+def log_success(message):
+    """Print success message with timestamp"""
+    print(f"{Fore.GREEN}[{datetime.now().strftime('%H:%M:%S')}] SUCCESS: {message}{Style.RESET_ALL}")
+
+def log_error(message):
+    """Print error message with timestamp"""
+    print(f"{Fore.RED}[{datetime.now().strftime('%H:%M:%S')}] ERROR: {message}{Style.RESET_ALL}")
 
 def get_crypto_news():
     """Fetch latest crypto news from CryptoPanic API"""
@@ -44,100 +60,124 @@ def get_crypto_news():
         
         return fresh_news[:3] if fresh_news else news[:3]  # Return top 3 news items
     except Exception as e:
-        print(f"Error fetching news: {e}")
+        log_error(f"Error fetching news: {e}")
         return None
 
 def create_reddit_post(subreddit_name, news_items):
     """Create a Reddit post with the news items"""
     if not news_items:
-        return
+        log_error("No news items to post")
+        return False
     
     try:
         subreddit = reddit.subreddit(subreddit_name)
         
-        # Create SEO-friendly title (Reddit search optimization)
+        # Create SEO-friendly title
         current_date = datetime.now().strftime("%Y-%m-%d")
         current_time = datetime.now().strftime("%I:%M %p")
         
         # Extract key topics for better searchability
         topics = []
         for news in news_items:
-            for keyword in ['Bitcoin', 'BTC', 'Ethereum', 'ETH', 'Crypto', 'Blockchain']:
+            for keyword in ['Bitcoin', 'BTC', 'Ethereum', 'ETH', 'Crypto', 'Blockchain', 'NFT', 'DeFi']:
                 if keyword.lower() in news['title'].lower():
                     topics.append(keyword)
         topics = list(dict.fromkeys(topics))  # Remove duplicates
         
         # Create search-optimized title
-        topics_str = f"[{' | '.join(topics[:2])}] " if topics else ""
-        post_title = f"{topics_str}Crypto News Update - {current_date} {current_time} CT"
+        topics_str = f"[{' | '.join(topics[:2])}] " if topics else "[Crypto News] "
+        post_title = f"{topics_str}Daily Blockchain & Crypto Update - {current_date} {current_time} CT"
         
-        # Create post content
-        post_content = "## 🚀 Latest Cryptocurrency News & Updates\n\n"
+        # Create post content with plain text alternatives for emojis
+        post_content = "## Latest Blockchain & Cryptocurrency News\n\n"
         
         for idx, news in enumerate(news_items, 1):
             post_content += f"### {idx}. {news['title']}\n"
-            post_content += f"📰 Source: {news['source']['title']}\n"
-            post_content += f"🔗 [Read Full Article]({news['url']})\n\n"
+            post_content += f"Source: {news['source']['title']}\n"
+            post_content += f"[Read Full Article]({news['url']})\n\n"
             if news.get('metadata', {}).get('description'):
                 post_content += f"> {news['metadata']['description']}\n\n"
         
-        # Add engagement prompts (increases comment activity)
-        post_content += "\n## 💬 Discussion\n"
-        post_content += "* What's your take on these developments?\n"
-        post_content += "* Which news do you think is most significant?\n"
-        post_content += "* Share your insights below!\n\n"
+        # Add engagement prompts
+        post_content += "\n## Discussion\n"
+        post_content += "* What are your thoughts on these developments?\n"
+        post_content += "* How might these news items impact the blockchain industry?\n"
+        post_content += "* Share your analysis below!\n\n"
         
         post_content += "\n---\n"
-        post_content += "🌐 **Stay Updated**: Visit [BlockchainFriendly.com](https://seriouscoder94.github.io/blockchain_website/) "
+        post_content += "**Stay Updated**: Visit [BlockchainFriendly.com](https://blockchainfriendly.com) "
         post_content += "for more insights and educational content about blockchain technology and cryptocurrency.\n\n"
-        post_content += "*This update is brought to you by the BlockchainFriendly News Bot* 🤖"
+        post_content += "*This update is brought to you by the BlockchainFriendly News Bot*"
         
-        # Add post flair for better categorization
-        post = subreddit.submit(title=post_title, selftext=post_content)
-        print(f"Successfully posted to r/{subreddit_name}")
-    
+        # Create the post
+        try:
+            post = subreddit.submit(title=post_title, selftext=post_content)
+            log_success(f"Posted to r/{subreddit_name}")
+            log_info(f"Post URL: {post.url}")
+            return True
+        except praw.exceptions.RedditAPIException as api_exception:
+            log_error(f"Reddit API Error: {api_exception}")
+            return False
+        except Exception as post_error:
+            log_error(f"Error creating post: {post_error}")
+            return False
+            
     except Exception as e:
-        print(f"Error creating Reddit post: {e}")
+        log_error(f"Critical Error: {e}")
+        return False
 
 def daily_task():
     """Main task to run daily"""
+    log_info("Starting daily news update task...")
     news_items = get_crypto_news()
     if news_items:
-        # Post only to our subreddit
-        create_reddit_post('BlockchainFriendly', news_items)
-        print(f"Successfully posted to r/BlockchainFriendly")
+        success = create_reddit_post('BlockchainFriendly', news_items)
+        if success:
+            log_success("Daily task completed successfully!")
+        else:
+            log_error("Daily task completed with errors")
+    else:
+        log_error("Could not fetch news items for daily task")
 
 def test_post():
     """Make an immediate test post"""
-    print("Making a test post to r/BlockchainFriendly...")
+    log_info("Making a test post to r/BlockchainFriendly...")
     news_items = get_crypto_news()
     if news_items:
-        # Test post to our subreddit
-        create_reddit_post('BlockchainFriendly', news_items)
-        print("Test post completed! Check r/BlockchainFriendly for your post.")
+        success = create_reddit_post('BlockchainFriendly', news_items)
+        if success:
+            log_success("Test post successful!")
+        else:
+            log_error("Test post failed")
     else:
-        print("Error: Could not fetch news for test post.")
+        log_error("Could not fetch news for test post")
 
 def main():
     """Main function to schedule and run the bot"""
-    print("Starting Reddit Crypto News Bot...")
+    log_info("Starting BlockchainFriendly Reddit Bot...")
     
-    # Make a test post first
+    # Make an initial test post
     test_post()
     
-    # Schedule 5 posts throughout the day at optimal times
-    schedule.every().day.at("09:00").do(daily_task)  # Morning US/Evening Asia
-    schedule.every().day.at("12:00").do(daily_task)  # Lunch time US
-    schedule.every().day.at("15:00").do(daily_task)  # Afternoon US/Evening Europe
-    schedule.every().day.at("18:00").do(daily_task)  # Evening US/Night Europe
-    schedule.every().day.at("21:00").do(daily_task)  # Night US/Morning Asia
+    # Schedule posts throughout the day (Central Time)
+    schedule.every().day.at("08:00").do(daily_task)  # Morning update
+    schedule.every().day.at("12:00").do(daily_task)  # Midday update
+    schedule.every().day.at("16:00").do(daily_task)  # Afternoon update
+    schedule.every().day.at("20:00").do(daily_task)  # Evening update
     
-    print("Bot scheduled to post at: 9 AM, 12 PM, 3 PM, 6 PM, and 9 PM Central Time")
+    log_info("Bot scheduled to post at:")
+    print(f"{Fore.YELLOW}   • 8:00 AM CT (Morning Update)")
+    print(f"   • 12:00 PM CT (Midday Update)")
+    print(f"   • 4:00 PM CT (Afternoon Update)")
+    print(f"   • 8:00 PM CT (Evening Update){Style.RESET_ALL}")
     
-    # Run the scheduler
     while True:
-        schedule.run_pending()
-        time.sleep(60)
+        try:
+            schedule.run_pending()
+            time.sleep(60)
+        except Exception as e:
+            log_error(f"Scheduler Error: {e}")
+            time.sleep(300)  # Wait 5 minutes before retrying
 
 if __name__ == "__main__":
     main()
