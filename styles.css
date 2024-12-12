@@ -128,6 +128,68 @@ body {
     background: var(--primary-color);
 }
 
+/* Mobile Navigation - MOBILE ONLY */
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #000000;
+        z-index: 9999;
+        padding: 10px 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-bottom: 1px solid #333;
+    }
+
+    .mobile-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        padding: 0 10px;
+        gap: 10px;
+        min-width: max-content;
+    }
+
+    .mobile-nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 8px 16px;
+        background: #222;
+        border-radius: 20px;
+        font-size: 14px;
+        white-space: nowrap;
+        border: 1px solid #333;
+    }
+
+    .mobile-nav-links a.active {
+        background: #0066ff;
+        color: white;
+        border-color: #0066ff;
+    }
+
+    /* Hide desktop nav on mobile */
+    .nav-container {
+        display: none;
+    }
+
+    /* Add padding to body to account for fixed nav */
+    body {
+        padding-top: 60px !important;
+    }
+}
+
+/* Hide mobile nav on desktop */
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
 /* Mobile Navigation Toggle Button */
 .mobile-nav-toggle {
     display: none;
