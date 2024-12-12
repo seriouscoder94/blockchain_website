@@ -108,6 +108,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    
+    navLinks.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    
+    if (navLinks.classList.contains('active') && 
+        !e.target.closest('.nav-links') && 
+        !e.target.closest('.mobile-nav-toggle')) {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+    }
+});
+
 // Floating blocks animation
 const createBlock = () => {
     const block = document.createElement('div');
