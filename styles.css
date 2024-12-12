@@ -227,6 +227,7 @@ body {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .mobile-tabs::-webkit-scrollbar {
@@ -242,6 +243,7 @@ body {
     border-radius: 20px;
     font-size: 14px;
     transition: background-color 0.3s;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .mobile-tabs a.active {
@@ -259,15 +261,32 @@ body {
     }
     
     .nav-container {
-        display: none;
+        display: none !important;
     }
     
     body {
-        padding-top: 60px;
+        padding-top: 60px !important;
+        margin: 0;
     }
     
-    .mobile-nav {
-        display: none;
+    .mobile-nav, .hamburger {
+        display: none !important;
+    }
+
+    /* Ensure content background is consistent */
+    .container, main, .content-section {
+        background: #fff;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    /* Reset any page-specific background colors on mobile */
+    body.home-page,
+    body.videos-page,
+    body.future-page,
+    body.basics-page,
+    body.community-page {
+        background: #fff;
     }
 }
 
