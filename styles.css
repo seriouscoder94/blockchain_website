@@ -110,6 +110,26 @@ body {
     background: var(--primary-color);
 }
 
+/* Mobile Navigation Toggle Button */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 6px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
 /* Price Ticker Styles */
 .price-ticker {
     width: 100%;
@@ -258,6 +278,98 @@ body {
 
     .hero-content h2 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Hamburger to X animation */
+    .mobile-nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .mobile-nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Mobile Navigation Links */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background: var(--dark-bg);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        width: 100%;
+        text-align: left;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Overlay when menu is open */
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        backdrop-filter: blur(3px);
+    }
+
+    .nav-links.active + .mobile-menu-overlay {
+        display: block;
+    }
+
+    /* Adjust logo position for mobile */
+    .logo {
+        padding-left: 15px;
+        z-index: 1001;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        padding: 15px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: var(--dark-bg);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add padding to body to account for fixed header */
+    body {
+        padding-top: 60px;
     }
 }
 
