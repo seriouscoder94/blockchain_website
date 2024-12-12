@@ -1,26 +1,27 @@
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const menuOverlay = document.querySelector('.menu-overlay');
     const body = document.body;
 
-    function toggleMobileMenu() {
-        mobileNavToggle.classList.toggle('active');
+    function toggleMenu() {
+        hamburgerMenu.classList.toggle('active');
         navLinks.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
         body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     }
 
-    if (mobileNavToggle && navLinks && mobileMenuOverlay) {
-        mobileNavToggle.addEventListener('click', function(e) {
+    if (hamburgerMenu && navLinks && menuOverlay) {
+        hamburgerMenu.addEventListener('click', function(e) {
             e.preventDefault();
-            toggleMobileMenu();
+            toggleMenu();
         });
 
-        mobileMenuOverlay.addEventListener('click', function(e) {
+        menuOverlay.addEventListener('click', function(e) {
             e.preventDefault();
             if (navLinks.classList.contains('active')) {
-                toggleMobileMenu();
+                toggleMenu();
             }
         });
 
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinksItems.forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
-                    toggleMobileMenu();
+                    toggleMenu();
                 }
             });
         });
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when pressing Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                toggleMobileMenu();
+                toggleMenu();
             }
         });
     }
