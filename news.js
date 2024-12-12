@@ -96,10 +96,7 @@ function createNewsCard(news) {
             <h3 class="news-title">${news.title}</h3>
             <p class="news-excerpt">${news.body.slice(0, 150)}...</p>
             <div class="news-meta">
-                <div class="news-source">
-                    <img src="${news.source_info.img}" alt="${news.source_info.name}" class="source-logo">
-                    <span>${news.source_info.name}</span>
-                </div>
+                <span class="news-source">${news.source_info.name}</span>
                 <span>${formattedDate}</span>
             </div>
         </div>

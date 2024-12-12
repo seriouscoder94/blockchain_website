@@ -2987,1036 +2987,182 @@ footer {
     }
 }
 
-/* Mobile Styles - Text Alignment Fixes */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-    /* General text containment */
-    * {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+    /* Improved text readability */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
     }
 
-    /* Content sections */
+    /* Better spacing for mobile */
     .content-section {
         padding: 2rem 1rem;
-        overflow: hidden;
-    }
-
-    .content-container {
-        width: 100%;
-        padding: 0 1rem;
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    /* Text alignment and sizing */
-    h1, h2, h3, h4, h5, h6, p {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    /* Hero section mobile adjustments */
-    .hero-content {
-        padding: 2rem 1rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5rem;
-        line-height: 1.3;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        line-height: 1.4;
         margin: 1rem 0;
     }
 
-    /* Navigation adjustments */
+    /* Improved mobile navigation */
     .nav-container {
-        padding: 0.5rem;
-        flex-direction: column;
+        padding: 0.8rem;
     }
 
     .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 1rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background: var(--dark-bg);
+        flex-direction: column;
+        padding: 4rem 1.5rem;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        text-align: center;
-        width: auto;
-        white-space: nowrap;
-    }
-
-    /* Section titles */
-    .section-title {
-        padding: 0 1rem;
-        text-align: center;
-    }
-
-    .section-title h2 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-        margin-bottom: 0.5rem;
-    }
-
-    .section-title p {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-
-    /* Card and grid adjustments */
-    .card, .feature-card, .news-card {
         width: 100%;
-        margin: 0.5rem 0;
         padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .card h3, .feature-card h3, .news-card h3 {
-        font-size: 1.2rem;
+    /* Improved card layouts */
+    .card, .value-card, .feature-card {
+        padding: 1.2rem;
+        margin: 0.8rem 0;
+    }
+
+    /* Better grid layouts for mobile */
+    .grid-container, .feature-grid, .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Improved mobile typography */
+    h1 {
+        font-size: 2rem;
         line-height: 1.3;
-        margin-bottom: 0.5rem;
     }
 
-    .card p, .feature-card p, .news-card p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-
-    /* Basics page specific */
-    .basics-page .content-section {
-        padding: 1.5rem 1rem;
-    }
-
-    .basics-page .explanation-box {
-        padding: 1.5rem 1rem;
-        margin: 1rem 0;
-    }
-
-    .basics-page .explanation-box h3 {
-        font-size: 1.4rem;
-        line-height: 1.3;
-        text-align: center;
+    h2 {
+        font-size: 1.6rem;
         margin-bottom: 1rem;
     }
 
-    .basics-page .explanation-box p,
-    .basics-page .explanation-box li {
-        font-size: 1rem;
-        line-height: 1.5;
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Better button sizing for touch */
+    button, .btn {
+        min-height: 44px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Improved form elements for mobile */
+    input, select, textarea {
+        font-size: 16px;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Better spacing for lists */
+    ul, ol {
+        padding-left: 1.2rem;
+    }
+
+    li {
         margin: 0.8rem 0;
-        padding-right: 1rem;
     }
 
-    /* Impact page */
-    .impact-page .stat-box {
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    .impact-page .stat-box h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Future page */
-    .future-page .prediction-card {
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    .future-page .prediction-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* News page */
-    .news-page .news-grid {
+    /* Improved footer for mobile */
+    .footer-content {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 1rem;
+        gap: 2rem;
+        padding: 2rem 1rem;
     }
 
-    .news-page .news-card {
-        margin: 0;
+    .footer-section {
+        text-align: center;
     }
 
-    /* Community page */
-    .community-page .discussion-box {
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    /* Contact page */
-    .contact-page .contact-form {
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    /* Fix for long words and URLs */
-    a, p, li, span, div {
-        word-break: break-word;
-    }
-
-    /* Ensure images don't overflow */
+    /* Better image handling */
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* Button adjustments */
-    .cta-button, .action-button {
-        width: 100%;
-        max-width: 300px;
-        margin: 0.5rem auto;
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
+    /* Improved spacing for news cards */
+    .news-card {
+        margin: 1rem 0;
     }
-}
 
-/* Support and Share Container */
-.support-share-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.support-section, .social-share {
-    flex: 0 1 400px;  
-    min-height: 500px;  
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.support-section h3, .social-share h4 {
-    color: var(--light-text);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.crypto-payments {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.donation-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-}
-
-.donation-buttons button {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.eth-button {
-    background: #627eea;
-    color: white;
-}
-
-.btc-button {
-    background: #f7931a;
-    color: white;
-}
-
-.usdc-button {
-    background: #2775ca;
-    color: white;
-}
-
-.donation-buttons button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-.wallet-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    max-width: 300px;
-}
-
-.wallet-link {
-    padding: 0.8rem 1.2rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.wallet-link:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.share-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-}
-
-.share-button {
-    padding: 1rem;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.share-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-.share-button.twitter { background: #1da1f2; }
-.share-button.facebook { background: #1877f2; }
-.share-button.linkedin { background: #0077b5; }
-.share-button.whatsapp { background: #25d366; }
-
-#qr-code {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-#copy-address {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.8rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#copy-address:hover {
-    background: var(--secondary-color);
-}
-
-/* Mobile responsiveness for support and share sections */
-@media (max-width: 768px) {
-    .support-share-container {
-        flex-direction: column;
+    .news-content {
         padding: 1rem;
     }
 
-    .support-section, .social-share {
+    /* Better video container sizing */
+    .video-wrapper {
+        margin: 1rem 0;
+    }
+
+    iframe {
+        max-height: 250px;
+    }
+
+    /* Improved table display */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Better touch targets */
+    a, button, .nav-links a {
+        padding: 0.8rem;
+        margin: 0.3rem 0;
+    }
+
+    /* Improved mobile menu overlay */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        min-height: auto;
-        padding: 1.5rem;
-    }
-}
-
-/* Value Cards Styling */
-.value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.value-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.value-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.value-card i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.value-card h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.value-card .dark-text {
-    color: #b0b0b0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Section Title Styling */
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-color);
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.section-title p {
-    font-size: 1.2rem;
-    color: #b0b0b0;
-}
-
-/* Content Section Styling */
-.content-section {
-    padding: 5rem 2rem;
-    background: transparent;
-}
-
-.content-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Basics Page Specific */
-.basics-page .content-section {
-    background: transparent;
-}
-
-.basics-page .value-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.basics-page .value-card:hover {
-    border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.basics-page .value-card .dark-text {
-    color: #b0b0b0;
-}
-
-/* Page-specific styles */
-.basics-page, .cryptocurrency-page, .future-page {
-    background: #ffffff;
-}
-
-.basics-page .content-section,
-.cryptocurrency-page .content-section,
-.future-page .content-section {
-    background: #ffffff;
-    color: #222;
-}
-
-.basics-page .section-title,
-.cryptocurrency-page .section-title,
-.future-page .section-title {
-    color: #222;
-}
-
-.basics-page .section-title p,
-.cryptocurrency-page .section-title p,
-.future-page .section-title p {
-    color: #444;
-}
-
-.basics-page .value-card,
-.cryptocurrency-page .value-card,
-.future-page .value-card {
-    background: #ffffff;
-    border: 1px solid #e6e6e6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-}
-
-.basics-page .value-card h3,
-.cryptocurrency-page .value-card h3,
-.future-page .value-card h3 {
-    color: #222;
-    font-family: "georgia", serif;
-    font-weight: 700;
-}
-
-.basics-page .value-card p,
-.cryptocurrency-page .value-card p,
-.future-page .value-card p,
-.basics-page .value-card .dark-text,
-.cryptocurrency-page .value-card .dark-text,
-.future-page .value-card .dark-text {
-    color: #444;
-    font-family: "georgia", serif;
-    line-height: 1.6;
-}
-
-.basics-page .value-card:hover,
-.cryptocurrency-page .value-card:hover,
-.future-page .value-card:hover {
-    border-color: #222;
-    transform: translateY(-2px);
-    transition: all 0.2s ease;
-}
-
-/* Keep original dark theme for other pages */
-.home-page,
-.impact-page,
-.news-page,
-.community-page {
-    background: var(--dark-bg);
-}
-
-.home-page .content-section,
-.impact-page .content-section,
-.news-page .content-section,
-.community-page .content-section {
-    background: var(--dark-bg);
-    color: var(--light-text);
-}
-
-/* Keep original dark theme for news, community, and contact pages */
-.news-page,
-.community-page,
-.contact-page {
-    background: var(--dark-bg);
-}
-
-.news-page .content-section,
-.community-page .content-section,
-.contact-page .content-section {
-    background: var(--dark-bg);
-    color: var(--light-text);
-}
-
-.news-page .section-title,
-.community-page .section-title,
-.contact-page .section-title {
-    color: var(--light-text);
-}
-
-.news-page .section-title p,
-.community-page .section-title p,
-.contact-page .section-title p {
-    color: #b0b0b0;
-}
-
-.news-card,
-.community-card,
-.contact-form {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--light-text);
-    padding: 2rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.news-card:hover,
-.community-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-}
-
-.news-title,
-.community-title,
-.contact-title {
-    color: var(--light-text);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.news-meta,
-.community-meta {
-    color: #b0b0b0;
-    font-size: 0.9rem;
-}
-
-/* Support and Share Links */
-.support-links,
-.share-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin: 1rem 0;
-}
-
-.support-links a,
-.share-links a {
-    color: #222;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.support-links a:hover,
-.share-links a:hover {
-    background: #f5f5f5;
-    border-color: #222;
-}
-
-.support-links i,
-.share-links i {
-    font-size: 1.2rem;
-    color: #222;
-}
-
-/* Cryptocurrency Support Links */
-.crypto-support a {
-    color: #222;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e6e6e6;
-    background: transparent;
-    margin: 0.5rem 0;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.crypto-support a:hover {
-    background: #f5f5f5;
-    border-color: #222;
-}
-
-.crypto-support i {
-    font-size: 1.2rem;
-    color: #222;
-}
-
-/* Dark theme components for news, community, and contact pages */
-.news-page .news-card,
-.community-page .community-card,
-.contact-page .contact-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-}
-
-.news-page .news-card:hover,
-.community-page .community-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.news-page .news-title,
-.community-page .community-title,
-.contact-page .contact-title {
-    color: var(--light-text);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.news-page .news-content,
-.community-page .community-content,
-.contact-page .contact-content {
-    color: var(--light-text);
-}
-
-.news-page p,
-.community-page p,
-.contact-page p {
-    color: #b0b0b0;
-}
-
-/* Contact form dark theme */
-.contact-form {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--light-text);
-    padding: 1rem;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
-.contact-form label {
-    color: var(--light-text);
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.contact-form button {
-    background: var(--primary-color);
-    color: var(--light-text);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-    background: var(--secondary-color);
-}
-
-/* Community elements dark theme */
-.community-stats,
-.community-rules,
-.community-posts {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-.community-stats h3,
-.community-rules h3,
-.community-posts h3 {
-    color: var(--light-text);
-    margin-bottom: 1rem;
-}
-
-.community-stats p,
-.community-rules p,
-.community-posts p {
-    color: #b0b0b0;
-}
-
-/* Video Page Styles */
-.video-section {
-    padding: 4rem 2rem;
-    background: var(--dark-bg);
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.video-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-card h3 {
-    color: var(--light-text);
-    padding: 1rem;
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.video-card p {
-    color: var(--light-text);
-    padding: 0 1rem 1rem;
-    margin: 0;
-    opacity: 0.8;
-    font-size: 0.9rem;
-}
-
-/* Video Page Mobile Styles */
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
     }
 
-    .video-section {
-        padding: 2rem 1rem;
-    }
-
-    .video-card h3 {
-        font-size: 1.1rem;
-    }
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    z-index: 1001;
-}
-
-.mobile-nav-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: var(--light-text);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    /* Navigation */
-    .mobile-nav-toggle {
+    .nav-links.active + .mobile-menu-overlay {
         display: block;
     }
 
-    .nav-container {
-        padding: 0.8rem;
+    /* Better spacing for crypto cards */
+    .crypto-card {
+        padding: 1rem;
+        margin: 0.5rem 0;
     }
 
-    .nav-links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--dark-bg);
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        width: 90%;
-        text-align: center;
-        padding: 0.8rem;
-        border-radius: 0;
-        margin: 0.2rem 0;
-    }
-
-    /* Page Headers */
-    .page-header-content h1 {
-        font-size: 1.8rem;
-        padding: 0 1rem;
-        text-align: center;
-    }
-
-    .page-header-content p {
-        font-size: 1rem;
-        padding: 0 1rem;
-        text-align: center;
-    }
-
-    /* Section Titles */
-    .section-title h2 {
-        font-size: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    .section-title p {
-        font-size: 0.9rem;
-        padding: 0 1rem;
-    }
-
-    /* Content Sections */
-    .content-section {
+    /* Improved mobile hero section */
+    .hero-content {
         padding: 2rem 1rem;
     }
 
-    /* Cards and Grids */
-    .video-grid,
-    .news-grid,
-    .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
+    /* Better mobile search experience */
+    .search-container {
+        padding: 0.8rem;
     }
 
-    .video-card,
-    .news-card,
-    .feature-card {
-        margin: 0.5rem 0;
+    .search-input {
+        font-size: 16px;
+        padding: 0.8rem;
     }
-
-    /* Price Ticker */
-    .ticker-container {
-        padding: 0.5rem;
-        gap: 1rem;
-    }
-
-    .crypto-card {
-        min-width: unset;
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-}
-
-/* Mobile Menu Animation */
-.mobile-nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Cryptocurrency sections text color */
-.digital-cash-section h3,
-.digital-cash-section p,
-.crypto-works-section h3,
-.crypto-works-section p,
-.crypto-works-section ul,
-.crypto-works-section li,
-.popular-crypto-section h3,
-.popular-crypto-section p {
-    color: #000000;
-}
-
-.digital-cash-example p,
-.digital-cash-example h4 {
-    color: #000000;
-}
-
-.step-number {
-    color: #000000;
-}
-
-/* Ensure all cryptocurrency section text is black */
-.crypto-works-section *,
-.digital-cash-section *,
-.popular-crypto-section * {
-    color: #000000 !important;
-}
-
-.crypto-works-step ul li,
-.crypto-works-step p,
-.crypto-works-content ul,
-.crypto-works-content li {
-    color: #000000 !important;
-}
-
-.popular-cryptocurrencies * {
-    color: #000000 !important;
-}
-
-/* Override any specific styles that might be changing the color */
-.crypto-works-step .step-content,
-.crypto-works-step .step-details,
-.crypto-feature li,
-.crypto-detail p,
-.crypto-detail li {
-    color: #000000 !important;
-}
-
-/* Ensure cryptocurrency types text is black */
-.crypto-grid .crypto-type {
-    color: #000000 !important;
-}
-
-.crypto-grid .crypto-type h3,
-.crypto-grid .crypto-type p {
-    color: #000000 !important;
-}
-
-/* Target specific cryptocurrency sections */
-.crypto-type:nth-child(1) p,
-.crypto-type:nth-child(2) p,
-.crypto-type:nth-child(3) p {
-    color: #000000 !important;
-}
-
-/* Additional specificity for the text */
-.content-section .crypto-grid .crypto-type p,
-.content-section .crypto-grid .crypto-type h3 {
-    color: #000000 !important;
 }
