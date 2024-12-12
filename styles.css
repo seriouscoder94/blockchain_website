@@ -300,27 +300,39 @@ body {
 }
 
 @media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
+    body {
+        padding-top: 60px;
+    }
+
+    .nav-container {
         position: fixed;
-        top: 15px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--dark-bg);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 1000;
+        padding-left: 5px;
+    }
+
+    .mobile-nav-toggle {
+        position: fixed;
+        top: 10px;
         right: 15px;
+        z-index: 1000;
+        background: transparent;
+        border: none;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
     }
 
-    /* Hamburger to X animation */
-    .mobile-nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .mobile-nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    /* Mobile Navigation Links */
     .nav-links {
         position: fixed;
         top: 0;
@@ -335,6 +347,7 @@ body {
         z-index: 999;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
         display: flex !important;
+        overflow-y: auto;
     }
 
     .nav-links.active {
@@ -356,7 +369,6 @@ body {
         border-bottom: none;
     }
 
-    /* Overlay when menu is open */
     .mobile-menu-overlay {
         display: none;
         position: fixed;
@@ -365,33 +377,12 @@ body {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
-        z-index: 998;
+        z-index: 997;
         backdrop-filter: blur(3px);
     }
 
     .nav-links.active + .mobile-menu-overlay {
         display: block;
-    }
-
-    /* Adjust logo position for mobile */
-    .logo {
-        padding-left: 15px;
-        z-index: 1001;
-    }
-
-    .nav-container {
-        justify-content: space-between;
-        padding: 15px;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        background: var(--dark-bg);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Add padding to body to account for fixed header */
-    body {
-        padding-top: 60px;
     }
 }
 
