@@ -2130,7 +2130,6 @@ footer {
 .discussion-header {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 10px;
 }
 
@@ -3949,4 +3948,75 @@ footer {
 
 .mobile-nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Cryptocurrency sections text color */
+.digital-cash-section h3,
+.digital-cash-section p,
+.crypto-works-section h3,
+.crypto-works-section p,
+.crypto-works-section ul,
+.crypto-works-section li,
+.popular-crypto-section h3,
+.popular-crypto-section p {
+    color: #000000;
+}
+
+.digital-cash-example p,
+.digital-cash-example h4 {
+    color: #000000;
+}
+
+.step-number {
+    color: #000000;
+}
+
+/* Ensure all cryptocurrency section text is black */
+.crypto-works-section *,
+.digital-cash-section *,
+.popular-crypto-section * {
+    color: #000000 !important;
+}
+
+.crypto-works-step ul li,
+.crypto-works-step p,
+.crypto-works-content ul,
+.crypto-works-content li {
+    color: #000000 !important;
+}
+
+.popular-cryptocurrencies * {
+    color: #000000 !important;
+}
+
+/* Override any specific styles that might be changing the color */
+.crypto-works-step .step-content,
+.crypto-works-step .step-details,
+.crypto-feature li,
+.crypto-detail p,
+.crypto-detail li {
+    color: #000000 !important;
+}
+
+/* Ensure cryptocurrency types text is black */
+.crypto-grid .crypto-type {
+    color: #000000 !important;
+}
+
+.crypto-grid .crypto-type h3,
+.crypto-grid .crypto-type p {
+    color: #000000 !important;
+}
+
+/* Target specific cryptocurrency sections */
+.crypto-type:nth-child(1) p,
+.crypto-type:nth-child(2) p,
+.crypto-type:nth-child(3) p {
+    color: #000000 !important;
+}
+
+/* Additional specificity for the text */
+.content-section .crypto-grid .crypto-type p,
+.content-section .crypto-grid .crypto-type h3 {
+    color: #000000 !important;
 }

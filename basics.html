@@ -115,81 +115,149 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="content-section how-it-works">
+    <section class="content-section use-cases-section">
         <div class="content-container">
             <div class="section-title">
                 <h2>How Does It Work?</h2>
                 <p>The simple way blockchain keeps everything secure</p>
             </div>
             
-            <div class="explanation-box">
-                <h3>It's Like a Chain of Digital Blocks</h3>
-                <div class="steps-box">
-                    <div class="step">
-                        <h4>1. Making a Transaction 💸</h4>
-                        <p>When you want to send money or store information, it gets put into a "block" - like a page in a notebook.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h4>2. Verification ✅</h4>
-                        <p>Computers in the network check if everything is correct - like having many people verify a story is true.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h4>3. Adding to the Chain 🔗</h4>
-                        <p>Once verified, the block is added to the chain - connected to all previous blocks, making it permanent.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h4>4. Everyone Gets Updated 🔄</h4>
-                        <p>The new information is shared with everyone in the network - like sending a group message that everyone receives.</p>
-                    </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <i class="fas fa-paper-plane"></i>
+                    <h3>Making a Transaction</h3>
+                    <p>Starting the process:</p>
+                    <ul>
+                        <li>Create new transaction request</li>
+                        <li>Package into a block</li>
+                        <li>Include sender and receiver info</li>
+                        <li>Add transaction details</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Verification</h3>
+                    <p>Network validation:</p>
+                    <ul>
+                        <li>Computers check transaction validity</li>
+                        <li>Verify sender has required funds</li>
+                        <li>Confirm transaction rules</li>
+                        <li>Multiple nodes validate together</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Adding to the Chain</h3>
+                    <p>Securing the block:</p>
+                    <ul>
+                        <li>Connect to previous blocks</li>
+                        <li>Create permanent record</li>
+                        <li>Apply cryptographic seal</li>
+                        <li>Make changes impossible</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Network Update</h3>
+                    <p>Sharing information:</p>
+                    <ul>
+                        <li>Distribute to all nodes</li>
+                        <li>Update network copies</li>
+                        <li>Maintain synchronization</li>
+                        <li>Ensure network consensus</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-<!-- Block Contents Section -->
-<section class="content-section block-contents">
-    <div class="content-container">
-        <div class="section-title">
-            <h2>What's Inside a Block?</h2>
-            <p>Understanding the building blocks of blockchain</p>
+
+    <!-- Block Contents Section -->
+    <section class="content-section use-cases-section">
+        <div class="content-container">
+            <div class="section-title">
+                <h2>What's Inside a Block?</h2>
+                <p>Understanding the building blocks of blockchain</p>
+            </div>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <i class="fas fa-hashtag"></i>
+                    <h3>Block Number</h3>
+                    <p>Block identification:</p>
+                    <ul>
+                        <li>Unique sequence number</li>
+                        <li>Shows position in chain</li>
+                        <li>Helps track block order</li>
+                        <li>Ensures proper sequencing</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Timestamp</h3>
+                    <p>Time recording:</p>
+                    <ul>
+                        <li>Creation date and time</li>
+                        <li>Transaction chronology</li>
+                        <li>Historical reference</li>
+                        <li>Verification timing</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Previous Hash</h3>
+                    <p>Chain connection:</p>
+                    <ul>
+                        <li>Links to previous block</li>
+                        <li>Creates unbreakable chain</li>
+                        <li>Ensures data integrity</li>
+                        <li>Prevents tampering</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Transaction Data</h3>
+                    <p>Block contents:</p>
+                    <ul>
+                        <li>Transaction records</li>
+                        <li>Smart contracts</li>
+                        <li>Digital signatures</li>
+                        <li>Transfer details</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-random"></i>
+                    <h3>Nonce</h3>
+                    <p>Mining solution:</p>
+                    <ul>
+                        <li>Proof-of-work number</li>
+                        <li>Mining difficulty target</li>
+                        <li>Block validation key</li>
+                        <li>Security mechanism</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Current Hash</h3>
+                    <p>Block fingerprint:</p>
+                    <ul>
+                        <li>Unique block identifier</li>
+                        <li>Cryptographic seal</li>
+                        <li>Data integrity check</li>
+                        <li>Tamper detection</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <div class="block-diagram">
-            <div class="block-component">
-                <div class="component-icon">🔢</div>
-                <h3>Block Number</h3>
-                <p>A unique number that shows the block's position in the chain</p>
-            </div>
-            <div class="block-component">
-                <div class="component-icon">⏰</div>
-                <h3>Timestamp</h3>
-                <p>The exact time when the block was created</p>
-            </div>
-            <div class="block-component">
-                <div class="component-icon">🔗</div>
-                <h3>Previous Hash</h3>
-                <p>A unique code linking to the previous block, creating the chain</p>
-            </div>
-            <div class="block-component">
-                <div class="component-icon">📝</div>
-                <h3>Transaction Data</h3>
-                <p>The actual information being stored (money transfers, contracts, etc.)</p>
-            </div>
-            <div class="block-component">
-                <div class="component-icon">🎯</div>
-                <h3>Nonce</h3>
-                <p>A special number used to verify the block's authenticity</p>
-            </div>
-            <div class="block-component">
-                <div class="component-icon">🔐</div>
-                <h3>Current Hash</h3>
-                <p>A unique fingerprint of all the block's contents combined</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+
     <!-- Technical Elements Section -->
     <section class="content-section business-section">
         <div class="content-container">
