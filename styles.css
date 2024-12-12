@@ -139,7 +139,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 9999;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -173,10 +173,10 @@ body {
 
 @media (max-width: 768px) {
     .mobile-tabs {
-        display: flex;
+        display: flex !important;
     }
     
-    .nav-container {
+    .nav-container, .mobile-nav, .hamburger {
         display: none !important;
     }
     
@@ -184,15 +184,26 @@ body {
         padding-top: 60px !important;
         margin: 0;
     }
-    
-    .mobile-nav, .hamburger {
-        display: none !important;
-    }
 
     /* Keep content layout clean */
     .container, main, .content-section {
         margin-top: 0;
         padding-top: 20px;
+    }
+
+    /* Fix any overlapping elements */
+    .page-header, .hero-section {
+        margin-top: 60px;
+    }
+}
+
+/* Remove any conflicting mobile styles */
+@media (max-width: 768px) {
+    .mobile-nav-toggle,
+    .mobile-menu,
+    .mobile-menu-overlay,
+    .mobile-header {
+        display: none !important;
     }
 }
 
