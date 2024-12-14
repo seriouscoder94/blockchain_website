@@ -3,75 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Master blockchain fundamentals with our easy-to-follow guide. Learn how blockchain works, key concepts, and real-world applications. Perfect for beginners starting their blockchain journey.">
-    <meta name="keywords" content="blockchain basics, how blockchain works, blockchain explained, blockchain tutorial, distributed ledger, cryptocurrency fundamentals, blockchain technology basics, blockchain for beginners">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Blockchain Basics: Understanding Blockchain Technology | BlockchainFriendly">
-    <meta property="og:description" content="Learn blockchain fundamentals the easy way. Discover how blockchain works, its key components, and why it matters in today's digital world.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://blockchainfriendly.com/basics.html">
-    <meta property="og:image" content="https://blockchainfriendly.com/images/blockchain-basics-og.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blockchain Basics: Your Guide to Understanding Blockchain">
-    <meta name="twitter:description" content="Start your blockchain journey here. Simple explanations of blockchain technology, its workings, and importance.">
-    <meta name="twitter:image" content="https://blockchainfriendly.com/images/blockchain-basics-twitter.jpg">
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <link rel="canonical" href="https://blockchainfriendly.com/basics.html">
-    
-    <title>Blockchain Basics - Your Friendly Guide</title>
+    <title>Blockchain Basics - Understanding the Foundation</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+        .nav-container {
+            background: var(--nav-bg);
+        }
+        .nav-container a {
+            color: white !important;
+        }
+        .content-section {
+            background: white;
+            color: black;
+            font-weight: bold;
+        }
+        .page-header {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .page-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .page-header p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: black !important;
+            font-weight: bold !important;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        p, span, div {
+            color: black;
+            font-weight: bold;
+        }
+        .value-card {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .value-card h3 {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .value-card p {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .value-card ul li {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .warning-card {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .warning-card h3 {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .warning-card p {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .section-title h2 {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .section-title p {
+            color: black !important;
+            font-weight: bold !important;
+        }
+        .footer {
+            background: var(--nav-bg);
+        }
+        .footer a {
+            color: white;
+        }
+        .dark-text {
+            color: black !important;
+            font-weight: bold !important;
+        }
+    </style>
 </head>
 <body class="basics-page">
-    <!-- Mobile Navigation -->
-    <div class="mobile-tabs">
-        <a href="index.html">Home</a>
-        <a href="basics.html" class="active">Basics</a>
-        <a href="cryptocurrency.html">Crypto</a>
-        <a href="impact.html">Impact</a>
-        <a href="future.html">Future</a>
-        <a href="videos.html">Videos</a>
-        <a href="news.html">News</a>
-        <a href="community.html">Community</a>
-        <a href="contact.html">Contact</a>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="logo">
-            <a href="index.html">Blockchain Education</a>
-        </div>
-        <button class="mobile-nav-toggle" onclick="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="basics.html" class="active">Basics</a>
-            <a href="cryptocurrency.html">Cryptocurrency</a>
-            <a href="impact.html">Impact</a>
-            <a href="future.html">Future</a>
-            <a href="videos.html">Videos</a>
-            <a href="news.html">News</a>
-            <a href="community.html">Community</a>
-            <a href="contact.html">Contact</a>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="index.html">Blockchain Hub</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="basics.html" class="active">Basics</a>
+                    <a href="global-scale.html">Global Scale</a>
+                    <a href="impact.html">Impact</a>
+                    <a href="future.html">Future</a>
+                    <a href="videos.html">Videos</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
         </nav>
-    </nav>
+    </header>
 
-    <!-- Page Header -->
     <header class="page-header">
         <div class="page-header-content">
-            <h1>Understanding Blockchain</h1>
-            <p>Start your journey into blockchain technology with our comprehensive guide. After mastering the basics, explore our <a href="cryptocurrency.html">cryptocurrency guide</a> and learn about the <a href="impact.html">real-world impact</a> of blockchain.</p>
+            <h1 style="color: black !important; font-weight: bold !important;">Understanding Blockchain Basics</h1>
+            <p style="color: black !important; font-weight: bold !important;">Learn the fundamental concepts and technology behind blockchain, explained in simple terms.</p>
         </div>
     </header>
 
@@ -79,321 +134,277 @@
     <section class="content-section business-section">
         <div class="content-container">
             <div class="section-title">
-                <h2>Understanding Blockchain</h2>
-                <p>A Digital Record Book Everyone Can Trust</p>
+                <h2 style="color: black !important; font-weight: bold !important;">Understanding Blockchain</h2>
+                <p style="color: black !important; font-weight: bold !important;">A Decentralized Digital Network</p>
             </div>
 
             <div class="value-grid">
                 <div class="value-card">
-                    <i class="fas fa-book"></i>
-                    <h3>What is Blockchain?</h3>
-                    <p class="dark-text">Think of it as a digital notebook that everyone shares. It keeps track of all transactions, can't be changed once written, and updates automatically when new information is added - just like a group chat where no one can delete messages!</p>
+                    <i class="fas fa-network-wired"></i>
+                    <h3 style="color: black !important; font-weight: bold !important;">What is Blockchain?</h3>
+                    <p style="color: black !important; font-weight: bold !important;">A blockchain is a digital network of computers that work together to maintain a shared record of information. Instead of storing data in one place, like a traditional database, blockchain spreads it across many computers (called nodes). Each node has a complete copy of all records, making the system decentralized - meaning no single person or organization controls it.</p>
+
+                    <div style="text-align: center; margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; overflow-x: auto;">
+                            <div style="background: white; border: 2px solid #007bff; padding: 8px; border-radius: 6px; min-width: 80px;">
+                                <strong style="color: #007bff; font-size: 0.9em;">Block 1</strong><br>
+                                <small style="font-size: 0.8em;">First</small>
+                            </div>
+                            <div style="color: #007bff; font-weight: bold; font-size: 0.9em;">→</div>
+                            <div style="background: white; border: 2px solid #007bff; padding: 8px; border-radius: 6px; min-width: 80px;">
+                                <strong style="color: #007bff; font-size: 0.9em;">Block 2</strong><br>
+                                <small style="font-size: 0.8em;">Next</small>
+                            </div>
+                            <div style="color: #007bff; font-weight: bold; font-size: 0.9em;">→</div>
+                            <div style="background: white; border: 2px solid #007bff; padding: 8px; border-radius: 6px; min-width: 80px;">
+                                <strong style="color: #007bff; font-size: 0.9em;">Block 3</strong><br>
+                                <small style="font-size: 0.8em;">Latest</small>
+                            </div>
+                        </div>
+                        <p style="margin-top: 10px; color: #666; font-style: italic; font-size: 0.8em;">Each block connects to form an unbreakable chain</p>
+                    </div>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3 style="color: black !important; font-weight: bold !important;">Understanding Blocks</h3>
+                    <p style="color: black !important; font-weight: bold !important;">Let's break it down simply:
+                    <br>• Blocks are like containers that hold information - they store things like who sent money to whom, or any other important data
+                    <br>• Once information is put in a block, it can't be changed - it's like writing in permanent marker instead of pencil</p>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 style="color: black !important; font-weight: bold !important;">How the Network Works</h3>
+                    <p style="color: black !important; font-weight: bold !important;">Think of the blockchain network like a neighborhood watch group:
+                    <br>• Instead of one person keeping records, everyone in the network has their own copy (like each neighbor watching their street)
+                    <br>• Before anything new is added, everyone in the network must check and agree it's correct (like neighbors voting on community decisions)</p>
                 </div>
 
                 <div class="value-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Why Trust It?</h3>
-                    <p class="dark-text">
-                        • No middleman needed - it's direct and secure<br>
-                        • Nearly impossible to hack or tamper with<br>
-                        • Everyone sees the same information<br>
-                        • Faster than traditional methods
-                    </p>
+                    <h3 style="color: black !important; font-weight: bold !important;">Why It's Secure</h3>
+                    <p style="color: black !important; font-weight: bold !important;">The blockchain stays safe because:
+                    <br>• Every piece of information gets a unique fingerprint - if someone tries to change the information, the fingerprint won't match anymore
+                    
+                    <br>• Once information is recorded, it's permanent - like carving something in stone</p>
                 </div>
 
-                <div class="value-card">
-                    <i class="fas fa-sync"></i>
-                    <h3>How It Works</h3>
-                    <p class="dark-text">Like a group chat where everyone sees the same messages, no one can change old messages, and you always know who sent what. Perfect for keeping track of important things like money and contracts!</p>
-                </div>
-
-                <div class="value-card">
-                    <i class="fas fa-tasks"></i>
-                    <h3>Real World Uses</h3>
-                    <p class="dark-text">
-                        • Digital money like Bitcoin<br>
-                        • Self-running smart contracts<br>
-                        • True ownership of gaming items<br>
-                        • Banking without banks<br>
-                        • Product tracking from factory to store
-                    </p>
-                </div>
-            </div>
-
-            <div class="value-note">
-                <h4>💡 Quick Tip</h4>
-                <p class="dark-text">Think of blockchain like a digital version of a public bulletin board - once something is posted, everyone can see it, and no one can take it down or change it without everyone knowing!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="content-section use-cases-section">
-        <div class="content-container">
-            <div class="section-title">
-                <h2>How Does It Work?</h2>
-                <p>The simple way blockchain keeps everything secure</p>
-            </div>
-            
-            <div class="value-grid">
                 <div class="value-card">
                     <i class="fas fa-paper-plane"></i>
-                    <h3>Making a Transaction</h3>
-                    <p>Starting the process:</p>
-                    <ul>
-                        <li>Create new transaction request</li>
-                        <li>Package into a block</li>
-                        <li>Include sender and receiver info</li>
-                        <li>Add transaction details</li>
-                    </ul>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Verification</h3>
-                    <p>Network validation:</p>
-                    <ul>
-                        <li>Computers check transaction validity</li>
-                        <li>Verify sender has required funds</li>
-                        <li>Confirm transaction rules</li>
-                        <li>Multiple nodes validate together</li>
-                    </ul>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-link"></i>
-                    <h3>Adding to the Chain</h3>
-                    <p>Securing the block:</p>
-                    <ul>
-                        <li>Connect to previous blocks</li>
-                        <li>Create permanent record</li>
-                        <li>Apply cryptographic seal</li>
-                        <li>Make changes impossible</li>
-                    </ul>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-sync"></i>
-                    <h3>Network Update</h3>
-                    <p>Sharing information:</p>
-                    <ul>
-                        <li>Distribute to all nodes</li>
-                        <li>Update network copies</li>
-                        <li>Maintain synchronization</li>
-                        <li>Ensure network consensus</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Block Contents Section -->
-    <section class="content-section use-cases-section">
-        <div class="content-container">
-            <div class="section-title">
-                <h2>What's Inside a Block?</h2>
-                <p>Understanding the building blocks of blockchain</p>
-            </div>
-            
-            <div class="value-grid">
-                <div class="value-card">
-                    <i class="fas fa-hashtag"></i>
-                    <h3>Block Number</h3>
-                    <p>Block identification:</p>
-                    <ul>
-                        <li>Unique sequence number</li>
-                        <li>Shows position in chain</li>
-                        <li>Helps track block order</li>
-                        <li>Ensures proper sequencing</li>
-                    </ul>
+                    <h3 style="color: black !important; font-weight: bold !important;">Starting a Transaction</h3>
+                    <p style="color: black !important; font-weight: bold !important;">Just like writing a letter, you need to:
+                    <br>• Write down who's sending (that's you!)
+                    <br>• Add who's receiving (your friend)
+                    <br>• Include what you're sending (like $50)
+                    <br>• Package it all together, ready to send</p>
                 </div>
 
                 <div class="value-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Timestamp</h3>
-                    <p>Time recording:</p>
-                    <ul>
-                        <li>Creation date and time</li>
-                        <li>Transaction chronology</li>
-                        <li>Historical reference</li>
-                        <li>Verification timing</li>
-                    </ul>
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3 style="color: black !important; font-weight: bold !important;">Checking Everything</h3>
+                    <p style="color: black !important; font-weight: bold !important;">Before anything happens:
+                    <br>• The network makes sure you have enough to send
+                    <br>• Verifies your account is real
+                    <br>• Checks that you're following all the rules
+                    <br>• Like when a bank makes sure your check won't bounce</p>
                 </div>
 
                 <div class="value-card">
                     <i class="fas fa-link"></i>
-                    <h3>Previous Hash</h3>
-                    <p>Chain connection:</p>
-                    <ul>
-                        <li>Links to previous block</li>
-                        <li>Creates unbreakable chain</li>
-                        <li>Ensures data integrity</li>
-                        <li>Prevents tampering</li>
-                    </ul>
+                    <h3 style="color: black !important; font-weight: bold !important;">Making it Official</h3>
+                    <p style="color: black !important; font-weight: bold !important;">Your transaction gets locked in:
+                    <br>• Added to a new block with other transactions
+                    <br>• Connected to all previous blocks
+                    <br>• Sealed so it can't be changed
+                    <br>• Like adding a page to a book that can't be torn out</p>
                 </div>
 
                 <div class="value-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Transaction Data</h3>
-                    <p>Block contents:</p>
-                    <ul>
-                        <li>Transaction records</li>
-                        <li>Smart contracts</li>
-                        <li>Digital signatures</li>
-                        <li>Transfer details</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <i class="fas fa-random"></i>
-                    <h3>Nonce</h3>
-                    <p>Mining solution:</p>
-                    <ul>
-                        <li>Proof-of-work number</li>
-                        <li>Mining difficulty target</li>
-                        <li>Block validation key</li>
-                        <li>Security mechanism</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <i class="fas fa-fingerprint"></i>
-                    <h3>Current Hash</h3>
-                    <p>Block fingerprint:</p>
-                    <ul>
-                        <li>Unique block identifier</li>
-                        <li>Cryptographic seal</li>
-                        <li>Data integrity check</li>
-                        <li>Tamper detection</li>
-                    </ul>
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3 style="color: black !important; font-weight: bold !important;">Spreading the Word</h3>
+                    <p style="color: black !important; font-weight: bold !important;">The final step:
+                    <br>• Every computer in the network gets a copy
+                    <br>• Everyone's records are updated
+                    <br>• Your transaction is now complete
+                    <br>• Like a group text where everyone gets the same message</p>
                 </div>
             </div>
-        </div>
+
     </section>
 
     <!-- Technical Elements Section -->
-    <section class="content-section business-section">
+    <section class="content-section use-cases-section">
         <div class="content-container">
             <div class="section-title">
-                <h2>How Does It Actually Work?</h2>
-                <p>The cool technology that makes blockchain tick</p>
+                <h2 style="color: #1a1a1a !important; font-weight: bold !important;">Blockchain Process</h2>
+                <p style="color: #2c3e50 !important; font-weight: 500 !important;">Understanding How Blockchain Works</p>
+            </div>
+
+            <div class="image-container" style="text-align: center; margin: 2rem 0;">
+                <img src="images/44227_2024_22_Fig1_HTML.png" alt="Blockchain Process Diagram showing the interconnected blocks and their relationships" class="feature-image" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <p class="image-credit" style="color: black !important; font-weight: bold !important; margin-top: 1rem;">Image source: Springer Nature - Blockchain Technology Illustration</p>
+            </div>
+
+            <div class="section-title">
+                <h2 style="color: #1a1a1a !important; font-weight: bold !important;">Understanding Blockchain</h2>
+                <p style="color: #2c3e50 !important; font-weight: 500 !important; font-size: 1.2rem; line-height: 1.6; margin-bottom: 3rem;">
+                    Think of blockchain like a chain of digital containers: each container (block) holds information that can't be changed - it's like writing in permanent marker instead of pencil, creating a super-secure digital ledger that everyone can trust.
+                </p>
+            </div>
+
+            <div class="section-title">
+                <h2 style="color: #1a1a1a !important; font-weight: bold !important;">Blockchain Applications</h2>
+                <p style="color: #1a1a1a !important; font-weight: 600 !important;">Real-World Uses of Blockchain Technology</p>
             </div>
 
             <div class="value-grid">
                 <div class="value-card">
-                    <i class="fas fa-key"></i>
-                    <h3>Digital Keys</h3>
-                    <p class="dark-text">Just like your house has a lock and key, blockchain uses digital keys to keep your stuff safe! You have a public key (like your address - okay to share) and a private key (like your house key - keep it secret!). Together, they make sure only you can access your digital stuff.</p>
+                    <i class="fas fa-money-bill-wave" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Banking & Money</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making money matters simpler and safer:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Send Money Worldwide:</strong> Transfer money internationally in minutes, not days</li>
+                        <li><strong style="color: #1a1a1a !important;">Easier Business Deals:</strong> Buy and sell internationally with less paperwork</li>
+                        <li><strong style="color: #1a1a1a !important;">Quick Insurance Claims:</strong> Get your insurance claims processed faster</li>
+                        <li><strong style="color: #1a1a1a !important;">Prove Who You Are Online:</strong> Secure digital ID that protects your privacy</li>
+                        <li><strong style="color: #1a1a1a !important;">Get Loans Faster:</strong> Quick loan decisions without endless paperwork</li>
+                    </ul>
                 </div>
 
                 <div class="value-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Group Decision Making</h3>
-                    <p class="dark-text">Imagine a group of friends deciding where to eat. Everyone votes on which transactions are real, most people must agree before anything happens, and once decided, it can't be changed. This keeps everything fair and honest!</p>
+                    <i class="fas fa-mobile-alt" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Apps & Games</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">New ways to use your phone and computer:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Better Social Media:</strong> Own your posts and data, not the big tech companies</li>
+                        <li><strong style="color: #1a1a1a !important;">Fun Gaming:</strong> Own your in-game items for real</li>
+                        <li><strong style="color: #1a1a1a !important;">Safe File Storage:</strong> Store files where no one can delete them</li>
+                    </ul>
                 </div>
 
                 <div class="value-card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>Self-Running Agreements</h3>
-                    <p class="dark-text">Think of a vending machine - you put in money, it automatically gives you a snack. That's like a smart contract! It automatically follows the rules you set and does what it promised. No human needed to make it happen!</p>
+                    <i class="fas fa-heartbeat" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Healthcare</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making healthcare more efficient and secure:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Your Medical History:</strong> Access your health records anywhere, anytime</li>
+                        <li><strong style="color: #1a1a1a !important;">Real Medicine Checker:</strong> Make sure your medicines aren't fake</li>
+                        <li><strong style="color: #1a1a1a !important;">Better Medical Research:</strong> Help scientists track their studies accurately</li>
+                        <li><strong style="color: #1a1a1a !important;">Secure Health Data:</strong> Keep your medical information private</li>
+                        <li><strong style="color: #1a1a1a !important;">Faster Insurance:</strong> Get your medical bills covered quicker</li>
+                    </ul>
                 </div>
 
                 <div class="value-card">
-                    <i class="fas fa-link"></i>
-                    <h3>How It All Connects</h3>
-                    <p class="dark-text">Picture a chain of paper clips - each clip is a block of information, they're linked together in order, and you can't break the chain or add clips in the middle. This keeps everything in perfect order!</p>
+                    <i class="fas fa-university" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Government Services</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making public services more trustworthy:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Safe Online Voting:</strong> Vote from home securely</li>
+                        <li><strong style="color: #1a1a1a !important;">Property Records:</strong> Keep track of who owns what without paperwork</li>
+                        <li><strong style="color: #1a1a1a !important;">Simple Tax Systems:</strong> Make taxes clearer and easier</li>
+                        <li><strong style="color: #1a1a1a !important;">Digital ID Cards:</strong> Prove who you are online safely</li>
+                        <li><strong style="color: #1a1a1a !important;">Public Information:</strong> Access government records easily</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="value-note">
-                <h4>🎮 Fun Example</h4>
-                <p class="dark-text">It's like a video game save file that everyone has a copy of. If someone tries to cheat by changing their copy, it won't match everyone else's, so the cheating is caught right away!</p>
+                <div class="value-card">
+                    <i class="fas fa-shopping-cart" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Shopping & Retail</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making shopping better and safer:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Spot Fake Products:</strong> Know if something is real or counterfeit</li>
+                        <li><strong style="color: #1a1a1a !important;">Better Reward Points:</strong> Use your points anywhere, not just one store</li>
+                        <li><strong style="color: #1a1a1a !important;">Know Your Product's Journey:</strong> See where your purchases come from</li>
+                        <li><strong style="color: #1a1a1a !important;">Protect Your Shopping Data:</strong> Keep your shopping habits private</li>
+                        <li><strong style="color: #1a1a1a !important;">Easy Payments:</strong> Pay securely without a credit card</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-graduation-cap" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Education & Learning</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making education more accessible and verifiable:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Prove Your Degree:</strong> Share your diplomas digitally</li>
+                        <li><strong style="color: #1a1a1a !important;">Share Research Safely:</strong> Keep research data secure and accessible</li>
+                        <li><strong style="color: #1a1a1a !important;">Digital Report Cards:</strong> Keep all your grades in one safe place</li>
+                        <li><strong style="color: #1a1a1a !important;">Online Course Certificates:</strong> Get recognized for online learning</li>
+                        <li><strong style="color: #1a1a1a !important;">Protected Learning Materials:</strong> Access textbooks and courses fairly</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-music" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Entertainment & Media</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">Making entertainment fairer for everyone:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Protect Creative Work:</strong> Artists control their music and art</li>
+                        <li><strong style="color: #1a1a1a !important;">Fair Pay for Creators:</strong> Artists get paid when people use their work</li>
+                        <li><strong style="color: #1a1a1a !important;">Share Profits Fairly:</strong> Everyone gets their fair share automatically</li>
+                        <li><strong style="color: #1a1a1a !important;">Real Event Tickets:</strong> No more fake concert tickets</li>
+                        <li><strong style="color: #1a1a1a !important;">Connect with Stars:</strong> New ways to support your favorite artists</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-building" style="color: #2c3e50 !important;"></i>
+                    <h3 style="color: #1a1a1a !important; font-weight: bold !important;">Business & Enterprise</h3>
+                    <p style="color: #2c3e50 !important; font-weight: 500 !important;">How businesses are making work easier and safer:</p>
+                    <ul style="color: #2c3e50 !important;">
+                        <li><strong style="color: #1a1a1a !important;">Track Products from Factory to Store:</strong> Know exactly where your products come from and where they've been</li>
+                        <li><strong style="color: #1a1a1a !important;">Keep Track of Company Assets:</strong> Like a digital inventory system that can't be tampered with</li>
+                        <li><strong style="color: #1a1a1a !important;">Automatic Business Agreements:</strong> Contracts that execute automatically when conditions are met</li>
+                        <li><strong style="color: #1a1a1a !important;">Verify Product Quality:</strong> Ensure products meet standards at every step</li>
+                        <li><strong style="color: #1a1a1a !important;">Smart Inventory Control:</strong> Never run out of stock or order too much</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <!-- Key Benefits Section -->
-<section class="content-section business-section">
-    <div class="content-container">
-        <div class="section-title">
-            <h2>Why Should You Care?</h2>
-            <p>The real-world benefits that make blockchain special</p>
-        </div>
-
-        <div class="value-grid">
-            <div class="value-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Super Safe</h3>
-                <p class="dark-text">Think of a bank vault with unbreakable locks and security cameras watching 24/7. Every action is recorded and can't be changed - that's how safe your stuff is with blockchain!</p>
-            </div>
-
-            <div class="value-card">
-                <i class="fas fa-handshake"></i>
-                <h3>No Middle Person</h3>
-                <p class="dark-text">Like selling your bike directly to a friend - no store needed, no extra fees. The computer makes sure everyone follows the rules, so you don't need banks or other companies in the middle.</p>
-            </div>
-
-            <div class="value-card">
-                <i class="fas fa-globe"></i>
-                <h3>Everyone Can Join</h3>
-                <p class="dark-text">Just like the internet, you can use it from anywhere! Send money as easily as sending an email. Perfect for people who can't get regular banking - all you need is a phone or computer.</p>
-            </div>
-
-            <div class="value-card">
-                <i class="fas fa-clock"></i>
-                <h3>Fast and Always On</h3>
-                <p class="dark-text">Like a 24-hour convenience store, blockchain never closes. Send money anytime, even on holidays. No waiting for banks to open - your money moves at internet speed!</p>
-            </div>
-        </div>
-
-        <div class="value-note">
-            <h4>💡 Real Life Example</h4>
-            <p class="dark-text">Imagine sending money to family overseas - instead of waiting days and paying big fees, blockchain lets you send it in minutes for much less. It's like texting money!</p>
-        </div>
-    </div>
-</section>
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="stats-container">
                 <div class="stat">
-                    <h3 class="dark-text">$2.3T</h3>
-                    <p class="dark-text">Global Blockchain Market by 2030</p>
+                    <h3 class="dark-text" style="color: black !important; font-weight: bold !important;">$2.3T</h3>
+                    <p class="dark-text" style="color: black !important; font-weight: bold !important;">Global Blockchain Market by 2030</p>
                 </div>
                 <div class="stat">
-                    <h3 class="dark-text">74%</h3>
-                    <p class="dark-text">Companies Exploring Blockchain</p>
+                    <h3 class="dark-text" style="color: black !important; font-weight: bold !important;">74%</h3>
+                    <p class="dark-text" style="color: black !important; font-weight: bold !important;">Companies Exploring Blockchain</p>
                 </div>
                 <div class="stat">
-                    <h3 class="dark-text">45M+</h3>
-                    <p class="dark-text">Blockchain Users Worldwide</p>
+                    <h3 class="dark-text" style="color: black !important; font-weight: bold !important;">45M+</h3>
+                    <p class="dark-text" style="color: black !important; font-weight: bold !important;">Blockchain Users Worldwide</p>
                 </div>
             </div>
             <div class="footer-section">
-                <h4>About Us</h4>
-                <p>Dedicated to making blockchain technology understandable for everyone.</p>
+                <h4 style="color: black !important; font-weight: bold !important;">About Us</h4>
+                <p style="color: black !important; font-weight: bold !important;">Dedicated to making blockchain technology understandable for everyone.</p>
             </div>
             <div class="footer-section">
-                <h4>Quick Links</h4>
+                <h4 style="color: black !important; font-weight: bold !important;">Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="basics.html">Basics</a></li>
-                    <li><a href="impact.html">Impact</a></li>
-                    <li><a href="future.html">Future</a></li>
+                    <li><a href="index.html" style="color: black !important; font-weight: bold !important;">Home</a></li>
+                    <li><a href="basics.html" style="color: black !important; font-weight: bold !important;">Basics</a></li>
+                    <li><a href="impact.html" style="color: black !important; font-weight: bold !important;">Impact</a></li>
+                    <li><a href="future.html" style="color: black !important; font-weight: bold !important;">Future</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Connect</h4>
+                <h4 style="color: black !important; font-weight: bold !important;">Connect</h4>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#" style="color: black !important; font-weight: bold !important;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: black !important; font-weight: bold !important;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: black !important; font-weight: bold !important;"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 BlockchainFriendly | Educational content for informational purposes only</p>
+            <p style="color: black !important; font-weight: bold !important;">&copy; 2024 BlockchainFriendly | Educational content for informational purposes only</p>
         </div>
     </footer>
 

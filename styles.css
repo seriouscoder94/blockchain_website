@@ -3,207 +3,147 @@
     --primary-color: #2962ff;
     --secondary-color: #0039cb;
     --accent-color: #768fff;
-    --text-color: #333;
+    --text-color: #fff;
     --light-text: #fff;
     --dark-bg: #1a1a1a;
     --card-bg: rgba(255, 255, 255, 0.1);
-    --background: #f8f9fa;
+    --background: #1a1a1a;
+    --nav-bg: #1a1a1a;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--light-text);
     background: var(--dark-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.dark-text {
+    color: var(--light-text) !important;
 }
 
 /* Page-specific backgrounds */
 .basics-page,
 .cryptocurrency-page,
-.future-page {
+.impact-page {
     background: #ffffff;
+    color: #333333;
 }
 
 .home-page,
-.impact-page,
 .news-page,
 .community-page,
 .contact-page {
     background: var(--dark-bg);
+    color: var(--light-text);
 }
 
 /* Content section backgrounds */
 .basics-page .content-section,
 .cryptocurrency-page .content-section,
-.future-page .content-section {
+.impact-page .content-section {
     background: #ffffff;
-    color: #222;
+    color: #333333;
+}
+
+.basics-page h1, 
+.basics-page h2, 
+.basics-page h3,
+.cryptocurrency-page h1,
+.cryptocurrency-page h2,
+.cryptocurrency-page h3,
+.impact-page h1,
+.impact-page h2,
+.impact-page h3 {
+    color: #333333;
+}
+
+.basics-page p,
+.cryptocurrency-page p,
+.impact-page p {
+    color: #333333;
 }
 
 .home-page .content-section,
-.impact-page .content-section,
 .news-page .content-section,
 .community-page .content-section,
 .contact-page .content-section {
-    background: var(--dark-bg);
+    background: var(--card-bg);
     color: var(--light-text);
 }
 
 /* Navigation Styles */
 .nav-container {
+    background: var(--nav-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: var(--dark-bg);
+}
+
+.nav-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .nav-links {
     display: flex;
     gap: 1.5rem;
+    justify-content: flex-end;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-links a {
-    color: var(--light-text);
+    color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.nav-links a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--light-text);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.nav-links a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1.2rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a.active {
-    color: var(--primary-color);
-    background: rgba(41, 98, 255, 0.1);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 2px;
-    background: var(--primary-color);
-}
-
-/* Mobile Navigation */
-.mobile-tabs {
-    display: none;
-    overflow-x: auto;
-    white-space: nowrap;
-    background: #1a1a1a;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.mobile-tabs::-webkit-scrollbar {
-    display: none;
-}
-
-.mobile-tabs a {
-    display: inline-block;
-    padding: 8px 16px;
-    color: #fff;
-    text-decoration: none;
-    margin: 0 4px;
-    border-radius: 20px;
-    font-size: 14px;
-    transition: background-color 0.3s;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.mobile-tabs a.active {
-    background: #4CAF50;
+    background-color: var(--primary-color);
     color: white;
 }
 
-.mobile-tabs a:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 @media (max-width: 768px) {
-    .mobile-tabs {
-        display: flex !important;
-    }
-    
-    .nav-container, .mobile-nav, .hamburger {
-        display: none !important;
-    }
-    
-    body {
-        padding-top: 60px !important;
-        margin: 0;
+    .nav-content {
+        flex-direction: column;
+        padding: 10px;
+        gap: 1rem;
     }
 
-    /* Keep content layout clean */
-    .container, main, .content-section {
-        margin-top: 0;
-        padding-top: 20px;
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
     }
 
-    /* Fix any overlapping elements */
-    .page-header, .hero-section {
-        margin-top: 60px;
-    }
-}
-
-/* Remove any conflicting mobile styles */
-@media (max-width: 768px) {
-    .mobile-nav-toggle,
-    .mobile-menu,
-    .mobile-menu-overlay,
-    .mobile-header {
-        display: none !important;
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 
@@ -231,7 +171,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border-radius: 8px;
     transition: all 0.3s ease;
     min-width: 200px;
@@ -350,7 +290,6 @@ body {
         right: 16px;
         height: 2px;
         background: var(--primary-color);
-        border-radius: 2px;
     }
 
     .nav-links a:hover {
@@ -383,73 +322,102 @@ body {
 }
 
 /* Hero Section */
-.hero {
-    min-height: 100vh;
+.hero-section {
     position: relative;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8rem 2rem 4rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1639322537228-f710d846310a') center/cover;
+    text-align: center;
     color: var(--light-text);
-    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
     max-width: 800px;
+    padding: 2rem;
+    z-index: 2;
 }
 
-.hero h1 {
+.hero-title {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color);
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--light-text);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.cta-buttons {
+.hero-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    margin-top: 2rem;
 }
 
-.cta-button {
+.button {
+    display: inline-block;
     padding: 1rem 2rem;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.cta-button:hover {
+.button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button:first-child {
+.button.primary {
     background: var(--primary-color);
     color: var(--light-text);
+    border: none;
 }
 
-.cta-button.secondary {
+.button.primary:hover {
+    background: var(--secondary-color);
+}
+
+.button.secondary {
     background: transparent;
     border: 2px solid var(--light-text);
     color: var(--light-text);
+}
+
+.button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
 }
 
 /* Page Header Styles */
 .page-header {
     padding: 6rem 2rem;
     text-align: center;
-    background: #ffffff;
+    background: var(--dark-bg);
     position: relative;
     overflow: hidden;
     margin-bottom: 3rem;
@@ -476,12 +444,13 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
 }
 
 .page-header h1 {
     font-family: Georgia, serif;
     font-size: 3.5rem;
-    color: #000000;
+    color: var(--light-text);
     margin-bottom: 1.5rem;
     font-weight: bold;
     letter-spacing: -0.5px;
@@ -491,7 +460,7 @@ body {
 .page-header p {
     font-family: Georgia, serif;
     font-size: 1.8rem;
-    color: #000000;
+    color: var(--light-text);
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.4;
@@ -502,7 +471,8 @@ body {
 /* Content Section Styles */
 .content-section {
     padding: 5rem 2rem;
-    background: transparent;
+    background: var(--card-bg);
+    color: var(--light-text);
 }
 
 .content-container {
@@ -523,6 +493,7 @@ body {
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: white;
 }
 
 .section-title p {
@@ -536,10 +507,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    overflow-x: hidden;
 }
 
 .value-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 2rem;
@@ -548,6 +520,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    color: var(--light-text);
 }
 
 .value-card:hover {
@@ -581,7 +554,7 @@ body {
 }
 
 .basics-page .value-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -643,8 +616,8 @@ body {
 /* Market Overview */
 .market-overview {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, var(--background) 0%, var(--background) 100%);
-    color: var(--text-color);
+    background: var(--dark-bg);
+    color: var(--light-text);
 }
 
 .market-overview h2 {
@@ -667,6 +640,7 @@ body {
     padding: 1.5rem;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
+    color: var(--light-text);
 }
 
 .market-card:hover {
@@ -735,8 +709,8 @@ body {
 /* Quick Stats */
 .quick-stats {
     padding: 4rem 2rem;
-    background: linear-gradient(45deg, var(--background) 0%, var(--background) 100%);
-    color: var(--text-color);
+    background: var(--dark-bg);
+    color: var(--light-text);
 }
 
 .stats-container {
@@ -746,6 +720,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    color: var(--light-text);
 }
 
 .stat-item h3 {
@@ -880,10 +855,11 @@ footer {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
 }
 
 .modern-form {
@@ -909,7 +885,7 @@ footer {
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     color: var(--light-text);
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -1010,7 +986,7 @@ footer {
 }
 
 .social-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -1044,6 +1020,7 @@ footer {
 /* Timeline Section Styles */
 .timeline-section {
     padding: 4rem 2rem;
+    background: var(--dark-bg);
 }
 
 .timeline {
@@ -1103,6 +1080,7 @@ footer {
 /* Feature Section Styles */
 .feature-section {
     padding: 4rem 2rem;
+    background: var(--dark-bg);
 }
 
 .feature-grid {
@@ -1114,11 +1092,12 @@ footer {
 
 .feature-item {
     padding: 2rem;
-    background: var(--dark-bg);
+    background: var(--card-bg);
     border-radius: 15px;
     border: 1px solid var(--primary-color);
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
 }
 
 .feature-item:hover {
@@ -1162,7 +1141,7 @@ footer {
 .tradingview-widget-container {
     width: 100%;
     height: 500px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid var(--primary-color);
@@ -1181,12 +1160,13 @@ footer {
 }
 
 .crypto-card {
-    background: var(--dark-bg);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid var(--primary-color);
     text-align: center;
     transition: transform 0.3s ease;
+    color: var(--light-text);
 }
 
 .crypto-card:hover {
@@ -1235,11 +1215,12 @@ footer {
 }
 
 .step {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     border-radius: 10px;
     padding: 1.5rem;
     border-left: 4px solid #FF9800;
     transition: transform 0.3s ease;
+    color: var(--light-text);
 }
 
 .step:hover {
@@ -1302,12 +1283,13 @@ footer {
 }
 
 .digital-cash-feature {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
 }
 
 .digital-cash-feature:hover {
@@ -1354,6 +1336,7 @@ footer {
 /* How Cryptocurrency Works Section */
 .crypto-works-section {
     margin: 3rem 0;
+    background: var(--dark-bg);
 }
 
 .crypto-works-content {
@@ -1363,11 +1346,12 @@ footer {
 }
 
 .crypto-works-step {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
 }
 
 .step-number {
@@ -1430,12 +1414,13 @@ footer {
 }
 
 .crypto-type {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     transition: transform 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
 }
 
 .crypto-type:hover {
@@ -1497,7 +1482,7 @@ footer {
 /* Value Section Styles */
 .value-section {
     padding: 40px 0;
-    background-color: #f9f9f9;
+    background-color: var(--dark-bg);
 }
 
 .value-grid {
@@ -1505,14 +1490,16 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin: 40px 0;
+    overflow-x: hidden;
 }
 
 .value-card {
-    background: white;
+    background: var(--card-bg);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    color: var(--light-text);
 }
 
 .value-card:hover {
@@ -1557,88 +1544,87 @@ footer {
 /* Business Section Styles */
 .business-section {
     padding: 4rem 2rem;
-    background: #ffffff;
-    color: #000000;
+    background: var(--dark-bg);
+    color: var(--light-text);
 }
 
 .business-section .value-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--card-bg);
 }
 
 .business-section .value-card h3 {
-    color: #000000;
+    color: var(--text-color);
 }
 
 .dark-text {
-    color: #000000 !important;
+    color: var(--text-color) !important;
     font-weight: 500;
 }
 
 /* Future Page Styles */
 .content-grid .content-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    color: #000000;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
 }
 
 .content-grid .content-card h2 {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .content-grid .content-card p {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .feature-section {
-    background: #ffffff;
+    background: var(--dark-bg);
 }
 
 .feature-section h2 {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .feature-item {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: var(--card-bg);
+    border: 1px solid var(--primary-color);
 }
 
 .feature-item h3 {
-    color: #000000;
+    color: var(--primary-color);
 }
 
 .feature-item p {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .timeline-section {
-    background: #ffffff;
+    background: var(--dark-bg);
 }
 
 .timeline-section h2 {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .timeline-item .timeline-content {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .timeline-item .timeline-content h3 {
-    color: #000000;
+    color: var(--light-text);
 }
 
 .timeline-item .timeline-content p {
-    color: #000000;
+    color: var(--light-text);
 }
 
 /* Price Dashboard Styles */
 .price-dashboard {
     padding: 2rem;
     margin-top: 2rem;
-    background: var(--secondary-bg);
+    background: var(--dark-bg);
     border-radius: 10px;
-    color: white;
+    color: var(--light-text);
 }
 
 .price-dashboard h2 {
@@ -1658,7 +1644,7 @@ footer {
     padding: 0.5rem 1rem;
     border: 2px solid var(--primary-color);
     background: transparent;
-    color: white;
+    color: var(--light-text);
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1666,7 +1652,7 @@ footer {
 
 .filter-btn.active {
     background: var(--primary-color);
-    color: white;
+    color: var(--light-text);
 }
 
 .price-grid {
@@ -1682,7 +1668,7 @@ footer {
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    color: white;
+    color: var(--light-text);
 }
 
 .price-card:hover {
@@ -1747,7 +1733,7 @@ footer {
 }
 
 .current-price, .coin-header h3, .detail span {
-    color: white !important;
+    color: var(--light-text) !important;
 }
 
 /* Mobile Responsive Styles */
@@ -1803,7 +1789,7 @@ footer {
 /* Support Section Styles */
 .support-section {
     padding: 2rem;
-    background: #f8f9fa;
+    background: var(--dark-bg);
     margin: 2rem 0;
     border-radius: 8px;
     text-align: center;
@@ -2042,14 +2028,14 @@ footer {
     padding: 30px 20px;
     margin: 40px auto;
     max-width: 600px;
-    background: #f8f9fa;
+    background: var(--dark-bg);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .social-share h4 {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--light-text);
     font-size: 1.5em;
 }
 
@@ -2122,7 +2108,7 @@ footer {
     flex: 1;
     min-width: 300px;
     max-width: 500px;
-    background: #f8f9fa;
+    background: var(--dark-bg);
     border-radius: 10px;
     padding: 30px 20px;
     margin: 20px 0;
@@ -2131,7 +2117,7 @@ footer {
 
 .support-section h3, .social-share h4 {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--light-text);
     font-size: 1.5em;
     text-align: center;
 }
@@ -2153,7 +2139,7 @@ footer {
 .community-header {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    background: var(--dark-bg);
     color: white;
     margin-bottom: 30px;
 }
@@ -2172,7 +2158,7 @@ footer {
 }
 
 .category {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2196,7 +2182,7 @@ footer {
 }
 
 .discussion-area {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2219,8 +2205,8 @@ footer {
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background: #2d2d2d;
-    color: white;
+    background: var(--card-bg);
+    color: var(--light-text);
     font-size: 16px;
 }
 
@@ -2246,6 +2232,7 @@ footer {
 .discussion-item {
     padding: 20px;
     border-bottom: 1px solid #eee;
+    background: var(--card-bg);
 }
 
 .discussion-header {
@@ -2284,7 +2271,7 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     transition: color 0.2s;
 }
 
@@ -2297,7 +2284,7 @@ footer {
 }
 
 .community-rules {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2316,143 +2303,6 @@ footer {
 
 .community-rules li:last-child {
     border-bottom: none;
-}
-
-@media (max-width: 768px) {
-    .forum-categories {
-        grid-template-columns: 1fr;
-    }
-    
-    .discussion-footer {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-}
-
-/* Reddit-style Community Styles */
-.community-header {
-    background: #1a1a1a;
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-actions {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.primary-button {
-    background: #0079d3;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.primary-button:hover {
-    background: #0061a9;
-}
-
-.sort-options select {
-    background: #272729;
-    color: #ffffff;
-    border: 1px solid #343536;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.reddit-style-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 24px;
-}
-
-/* Sidebar Styles */
-.community-sidebar {
-    order: 2;
-}
-
-.sidebar-section {
-    background: white;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    padding: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.about-community h3 {
-    margin-bottom: 12px;
-    color: #1a1a1a;
-    font-size: 16px;
-}
-
-.community-stats {
-    display: flex;
-    justify-content: space-around;
-    margin: 16px 0;
-    padding: 16px 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-}
-
-.stat-label {
-    font-size: 12px;
-    color: #7c7c7c;
-}
-
-.join-button {
-    width: 100%;
-    padding: 8px;
-    background: #0079d3;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.join-button:hover {
-    background: #0061a9;
-}
-
-.community-rules ol {
-    padding-left: 24px;
-    margin: 0;
-}
-
-.community-rules li {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #1a1a1a;
 }
 
 .topic-tags {
@@ -2487,19 +2337,19 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1000;
 }
 
 .modal-content {
     position: relative;
-    background: white;
+    background: var(--card-bg);
     margin: 50px auto;
     padding: 24px;
     width: 90%;
     max-width: 800px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .close-modal {
@@ -2522,7 +2372,7 @@ footer {
     padding: 8px;
     border: 1px solid #eee;
     border-radius: 4px;
-    background: white;
+    background: var(--card-bg);
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -2550,6 +2400,8 @@ footer {
     border: 1px solid #eee;
     border-radius: 4px;
     font-size: 14px;
+    background: var(--card-bg);
+    color: var(--light-text);
 }
 
 #post-form textarea {
@@ -2567,11 +2419,11 @@ footer {
 
 /* Post Styles */
 .post {
-    background: white;
+    background: var(--card-bg);
     border-radius: 4px;
     margin-bottom: 16px;
     padding: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .post-header {
@@ -2598,13 +2450,13 @@ footer {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #1a1a1a;
+    color: var(--light-text);
 }
 
 .post-content {
     font-size: 14px;
     line-height: 1.6;
-    color: #1a1a1a;
+    color: var(--light-text);
     margin-bottom: 16px;
 }
 
@@ -2650,7 +2502,7 @@ footer {
 }
 
 .post-action:hover {
-    color: #1a1a1a;
+    color: var(--light-text);
 }
 
 @media (max-width: 968px) {
@@ -2675,23 +2527,19 @@ footer {
 
 /* Reddit Community Styles */
 .reddit-community {
-    background: #1a1a1b;
+    background: var(--dark-bg);
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;
-    color: #d7dadc;
+    color: var(--light-text);
 }
 
 .reddit-community h4 {
-    color: #d7dadc;
+    color: var(--light-text);
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.reddit-community h4 i {
-    color: #ff4500;
 }
 
 .reddit-stats {
@@ -2711,7 +2559,7 @@ footer {
     display: block;
     font-size: 1.2em;
     font-weight: bold;
-    color: #d7dadc;
+    color: var(--light-text);
 }
 
 .stat-label {
@@ -2741,7 +2589,7 @@ footer {
 }
 
 .reddit-schedule h5 {
-    color: #d7dadc;
+    color: var(--light-text);
     margin-bottom: 10px;
 }
 
@@ -2762,7 +2610,7 @@ footer {
 
 /* Reddit Feed Styles */
 .reddit-feed {
-    background: #1a1a1b;
+    background: var(--dark-bg);
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -2773,19 +2621,19 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #272729;
+    background: var(--card-bg);
     border-bottom: 1px solid #343536;
 }
 
 .feed-header h2 {
-    color: #ffffff;
+    color: var(--light-text);
     margin: 0;
     font-size: 1.2em;
 }
 
 .feed-controls .sort-select {
-    background: #272729;
-    color: #ffffff;
+    background: var(--card-bg);
+    color: var(--light-text);
     border: 1px solid #343536;
     padding: 5px 10px;
     border-radius: 4px;
@@ -2796,12 +2644,12 @@ footer {
 }
 
 .reddit-post {
-    background: #272729;
+    background: var(--card-bg);
     border: 1px solid #343536;
     border-radius: 4px;
     padding: 15px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: var(--light-text);
 }
 
 .post-header {
@@ -2817,14 +2665,14 @@ footer {
 }
 
 .post-author {
-    color: #ffffff;
+    color: var(--light-text);
     font-size: 0.9em;
 }
 
 .post-title {
     font-size: 1.1em;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: var(--light-text);
     text-decoration: none;
 }
 
@@ -2836,12 +2684,13 @@ footer {
     margin-bottom: 10px;
     font-size: 0.95em;
     line-height: 1.4;
+    color: var(--light-text);
 }
 
 .post-footer {
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: var(--light-text);
     font-size: 0.9em;
 }
 
@@ -2856,7 +2705,7 @@ footer {
 .loading-spinner {
     text-align: center;
     padding: 20px;
-    color: #ffffff;
+    color: var(--light-text);
 }
 
 @media (max-width: 768px) {
@@ -2870,15 +2719,15 @@ footer {
     margin-bottom: 10px;
     font-size: 0.95em;
     line-height: 1.4;
-    color: #ffffff !important;
+    color: var(--light-text) !important;
 }
 
 .reddit-post * {
-    color: #ffffff;
+    color: var(--light-text);
 }
 
 .post-content p {
-    color: #ffffff;
+    color: var(--light-text);
     margin-bottom: 10px;
 }
 
@@ -2950,13 +2799,12 @@ footer {
 
     /* Improved mobile typography */
     h1 {
-        font-size: 2rem;
+        font-size: 2rem !important;
         line-height: 1.3;
     }
 
     h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        font-size: 1.6rem !important;
     }
 
     h3 {
@@ -2988,8 +2836,7 @@ footer {
     /* Improved footer for mobile */
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem 1rem;
+        text-align: center;
     }
 
     .footer-section {
@@ -3081,5 +2928,300 @@ footer {
     
     .content-section h2 {
         font-size: 1.5rem !important;
+    }
+}
+
+/* AI & Blockchain Page Styles */
+.ai-blockchain-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ai-blockchain-bg.jpg') center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: var(--dark-bg);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3, .feature-card p {
+    color: var(--light-text);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 3rem auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.timeline-item {
+    margin: 2rem 0;
+    position: relative;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.timeline-item h3, .timeline-item p {
+    color: var(--light-text);
+}
+
+.use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.use-case {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--light-text);
+}
+
+.use-case h3, .use-case p {
+    color: var(--light-text);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 0;
+    }
+    
+    .timeline-item {
+        margin-left: 20px;
+    }
+}
+
+.image-section {
+    padding: 2rem 0;
+    background: var(--section-bg);
+}
+
+.image-container {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.feature-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-credit {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Video Grid Styles */
+.video-section {
+    padding: 2rem 0;
+    background: var(--section-bg);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: var(--light-text);
+    font-size: 1.2rem;
+}
+
+.video-card p {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: var(--light-text);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-card {
+        margin: 0 1rem;
+    }
+}
+
+/* Text Readability Improvements */
+.value-card {
+    padding: 2rem;
+    margin: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.value-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.value-card ul {
+    padding-left: 1.2rem;
+}
+
+.value-card li {
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+.value-card i {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: #2c3e50;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.7px;
+}
+
+.section-title p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+}
+
+/* Content Section Spacing */
+.content-section {
+    padding: 4rem 2rem;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Value Grid Layout */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Responsive Text Adjustments */
+@media (max-width: 768px) {
+    .value-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .value-card p {
+        font-size: 1rem;
+    }
+    
+    .value-card li {
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem;
     }
 }
