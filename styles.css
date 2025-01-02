@@ -21,6 +21,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background: var(--dark-bg);
+    padding-top: 70px;
 }
 
 /* Navigation Styles */
@@ -28,12 +29,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 4rem;
+    padding: 1rem 4rem;
     background: var(--dark-bg);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    height: auto;
 }
 
 .logo a {
@@ -160,16 +164,22 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-container {
-        padding: 1rem 2rem;
+        padding: 0.8rem 1rem;
     }
 
     .nav-links {
         gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-links a {
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
+    }
+
+    .logo a {
+        font-size: 1.2rem;
     }
 
     .ticker-container {
